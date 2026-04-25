@@ -8,9 +8,16 @@
 
 \definecolor{UAFMDarkBlue}{HTML}{003366}
 \definecolor{UAFMAccent}{HTML}{005F8B}
-\definecolor{UAFMLightGray}{HTML}{F5F7FA}
-\definecolor{UAFMText}{HTML}{111111}
-\definecolor{UAFMMuted}{HTML}{666666}
+\definecolor{UAFMTeal}{HTML}{0F766E}
+\definecolor{UAFMOrange}{HTML}{B45309}
+\definecolor{UAFMRed}{HTML}{B42318}
+\definecolor{UAFMLightGray}{HTML}{F4F7FB}
+\definecolor{UAFMSoftBlue}{HTML}{EAF2FB}
+\definecolor{UAFMSoftTeal}{HTML}{EAF7F5}
+\definecolor{UAFMSoftOrange}{HTML}{FFF3E8}
+\definecolor{UAFMSoftRed}{HTML}{FDECEC}
+\definecolor{UAFMText}{HTML}{102033}
+\definecolor{UAFMMuted}{HTML}{5B6472}
 \definecolor{UAFMAlert}{HTML}{C00000}
 
 \setbeamercolor{normal text}{fg=UAFMText,bg=white}
@@ -25,6 +32,9 @@
 \setbeamercolor{alerted text}{fg=UAFMAlert}
 \setbeamercolor{block title}{fg=white,bg=UAFMDarkBlue}
 \setbeamercolor{block body}{fg=UAFMText,bg=UAFMLightGray}
+\setbeamercolor{itemize item}{fg=UAFMAccent}
+\setbeamercolor{itemize subitem}{fg=UAFMTeal}
+\setbeamercolor{enumerate item}{fg=UAFMAccent}
 
 \setbeamerfont{title}{size=\LARGE,series=\bfseries}
 \setbeamerfont{subtitle}{size=\normalsize}
@@ -55,6 +65,7 @@
 \setbeamertemplate{frametitle}{
   \vspace{0.3cm}
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=10mm,rightskip=10mm]{frametitle}
+    \textcolor{UAFMAccent}{\rule{6mm}{1.2pt}}\hspace{1.8mm}%
     \usebeamerfont{frametitle}\insertframetitle
   \end{beamercolorbox}
   \vspace{0.15cm}
@@ -100,7 +111,10 @@
     \begin{beamercolorbox}[wd=\paperwidth,leftskip=10mm,rightskip=10mm]{normal text}
       {\usebeamerfont{frametitle}\insertsection\par}
       \vspace{0.2cm}
-      {\color{UAFMAccent}\rule{0.45\paperwidth}{1pt}}
+      {\color{UAFMAccent}\rule{0.55\paperwidth}{1.2pt}}
+      \vspace{0.35cm}
+
+      {\color{UAFMMuted}\large część praktyczno-akademicka\par}
     \end{beamercolorbox}
     \vfill
   \end{frame}

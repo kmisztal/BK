@@ -7,6 +7,7 @@
 \usepackage{lmodern}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{beamerthemeUAFM}
 
 \title{Nowe technologie i innowacje w badaniach klinicznych}
@@ -28,5 +29,74 @@
     \begin{itemize}
       #2
     \end{itemize}
+  \end{frame}
+}
+
+\newcommand{\SlideID}[1]{\label{slide:#1}}
+
+\newenvironment{DefinitionBox}
+  {\begin{beamercolorbox}[wd=\linewidth,sep=0.9em,rounded=true]{block body}\textbf{\textcolor{UAFMDarkBlue}{Definicja}}\par\medskip}
+  {\end{beamercolorbox}}
+
+\newenvironment{ExampleBox}
+  {\begin{beamercolorbox}[wd=\linewidth,sep=0.9em,rounded=true]{block body}\textbf{\textcolor{UAFMTeal}{Przykład}}\par\medskip}
+  {\end{beamercolorbox}}
+
+\newenvironment{WarningBox}
+  {\setbeamercolor{localbox}{fg=UAFMText,bg=UAFMSoftRed}\begin{beamercolorbox}[wd=\linewidth,sep=0.9em,rounded=true]{localbox}\textbf{\textcolor{UAFMRed}{Uwaga}}\par\medskip}
+  {\end{beamercolorbox}}
+
+\newenvironment{QuestionBox}
+  {\setbeamercolor{localbox}{fg=UAFMText,bg=UAFMSoftOrange}\begin{beamercolorbox}[wd=\linewidth,sep=0.9em,rounded=true]{localbox}\textbf{\textcolor{UAFMOrange}{Pytanie do grupy}}\par\medskip}
+  {\end{beamercolorbox}}
+
+\newcommand{\BlockGoalFrame}[2]{
+  \begin{frame}{Cel bloku}
+    #1
+    \begin{itemize}
+      #2
+    \end{itemize}
+  \end{frame}
+}
+
+\newcommand{\DemoFrame}[2]{
+  \begin{frame}{Demo: #1}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.9em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMTeal}{Na co patrzymy}}\par\medskip
+      #2
+    \end{beamercolorbox}
+  \end{frame}
+}
+
+\newcommand{\WorkshopFrame}[2]{
+  \begin{frame}{Warsztat: #1}
+    \begin{enumerate}
+      #2
+    \end{enumerate}
+  \end{frame}
+}
+
+\newcommand{\DiscussionFrame}[2]{
+  \begin{frame}{Dyskusja: #1}
+    \begin{QuestionBox}
+      #2
+    \end{QuestionBox}
+  \end{frame}
+}
+
+\newcommand{\CaseStudyFrame}[3]{
+  \begin{frame}{Case study: #1}
+    \begin{columns}[T,onlytextwidth]
+      \column{0.48\textwidth}
+      \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+        \textbf{\textcolor{UAFMDarkBlue}{Sytuacja}}\par\medskip
+        #2
+      \end{beamercolorbox}
+      \column{0.48\textwidth}
+      \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+        \textbf{\textcolor{UAFMTeal}{Punkt do omówienia}}\par\medskip
+        #3
+      \end{beamercolorbox}
+    \end{columns}
   \end{frame}
 }
