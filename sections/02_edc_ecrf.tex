@@ -2,35 +2,209 @@
 
 % SLIDE ID: sec02-goal
 \BlockGoalFrame{\SlideID{sec02-goal}}{
-  \item zrozumieć, czym różni się EDC od samego formularza eCRF,
-  \item zobaczyć, jak projekt formularza wpływa na jakość danych,
-  \item przygotować się do części demonstracyjnej i warsztatowej.
+  \item zrozumieć, że EDC jest centralnym systemem zbierania danych,
+  \item zobaczyć, jak eCRF porządkuje logikę badania i wpisów,
+  \item połączyć strukturę systemu z jakością danych i dalszą analizą.
 }
 
-% SLIDE ID: sec02-core
-\begin{frame}{EDC i eCRF: punkt centralny pracy z danymi}
-  \SlideID{sec02-core}
-  \begin{itemize}
-    \item EDC służy do elektronicznego zbierania danych badania.
-    \item eCRF jest interfejsem i strukturą formularzy, przez które dane trafiają do systemu.
-    \item Jakość projektu eCRF wpływa bezpośrednio na jakość danych, monitoring i analizę.
-  \end{itemize}
-\end{frame}
-
-% SLIDE ID: sec02-scope
-\begin{frame}{Zakres sekcji}
-  \SlideID{sec02-scope}
-  \begin{itemize}
-    \item logika formularzy i wizyt,
-    \item walidacje i query management,
-    \item role użytkowników i audit trail.
-  \end{itemize}
-\end{frame}
-
-% SLIDE ID: sec02-definition
-\begin{frame}{EDC w praktyce}
-  \SlideID{sec02-definition}
+% SLIDE ID: sec02-edc-definition
+\begin{frame}{Czym jest EDC}
+  \SlideID{sec02-edc-definition}
   \begin{DefinitionBox}
-    EDC to system zarządzający strukturą danych badania, przepływem wpisów, walidacjami i kontrolą zmian, a nie tylko „elektroniczna karta obserwacji”.
+    EDC to system informatyczny, w którym zbierane, kontrolowane i porządkowane są dane z badania klinicznego.
   \end{DefinitionBox}
+
+  \vspace{0.35cm}
+
+  \begin{itemize}
+    \item przechowuje dane pacjentów i wizyt,
+    \item kontroluje poprawność wpisów,
+    \item wspiera monitoring, cleaning i zamknięcie bazy.
+  \end{itemize}
 \end{frame}
+
+% SLIDE ID: sec02-ecrf-definition
+\begin{frame}{Czym jest eCRF}
+  \SlideID{sec02-ecrf-definition}
+  \begin{itemize}
+    \item eCRF to elektroniczny formularz używany do wpisywania danych,
+    \item jest częścią systemu EDC,
+    \item odwzorowuje logikę protokołu: wizyty, procedury i pola danych.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-paper-vs-electronic
+\begin{frame}{Papierowy CRF vs eCRF}
+  \SlideID{sec02-paper-vs-electronic}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMOrange}{Papier}} \par\medskip
+      \begin{itemize}
+        \item wpis po fakcie,
+        \item brak natychmiastowej kontroli,
+        \item większe ryzyko braków i błędów.
+      \end{itemize}
+    \end{beamercolorbox}
+
+    \column{0.48\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMTeal}{Elektroniczny eCRF}} \par\medskip
+      \begin{itemize}
+        \item wpis bezpośrednio do systemu,
+        \item walidacja w momencie wpisu,
+        \item pełna ścieżka zmian i szybszy cleaning.
+      \end{itemize}
+    \end{beamercolorbox}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec02-study-structure
+\begin{frame}{Struktura badania w EDC}
+  \SlideID{sec02-study-structure}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.23\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Pacjent}
+    \end{beamercolorbox}
+
+    \column{0.23\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Wizyta}
+    \end{beamercolorbox}
+
+    \column{0.23\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Formularz}
+    \end{beamercolorbox}
+
+    \column{0.23\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Pole danych}
+    \end{beamercolorbox}
+  \end{columns}
+
+  \vspace{0.5cm}
+
+  \begin{itemize}
+    \item dane nie są wpisywane „luzem”, tylko w określonej strukturze,
+    \item dobra struktura ułatwia jakość, monitoring i analizę,
+    \item zła struktura mnoży błędy już od pierwszego wpisu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-validations
+\begin{frame}{Walidacje: pierwsza linia kontroli}
+  \SlideID{sec02-validations}
+  \begin{itemize}
+    \item sprawdzają kompletność, zakresy i logikę danych,
+    \item mogą działać natychmiast przy wpisie lub po zapisaniu formularza,
+    \item nie zastępują myślenia użytkownika, ale wyłapują część błędów wcześnie.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{ExampleBox}
+    Wiek 250 lat, brak daty wizyty albo wynik niemożliwy dla danego badania laboratoryjnego.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: sec02-query-management
+\begin{frame}{Query management}
+  \SlideID{sec02-query-management}
+  \begin{itemize}
+    \item query to pytanie o niejasny, brakujący lub niespójny wpis,
+    \item może być generowane automatycznie albo przez monitora / data managera,
+    \item jego celem jest wyjaśnienie danych, a nie „karanie” użytkownika.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-audit-trail
+\begin{frame}{Audit trail}
+  \SlideID{sec02-audit-trail}
+  \begin{itemize}
+    \item system zapisuje kto, kiedy i co zmienił,
+    \item widać wartość pierwotną i wartość po zmianie,
+    \item to kluczowe dla zgodności i wiarygodności danych.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-roles
+\begin{frame}{Role użytkowników}
+  \SlideID{sec02-roles}
+  \begin{itemize}
+    \item badacz i koordynator wpisują lub uzupełniają dane,
+    \item monitor przegląda wpisy i zgłasza query,
+    \item data manager nadzoruje jakość danych i cleaning,
+    \item sponsor ma dostęp zależny od roli i modelu badania.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-cleaning-lock
+\begin{frame}{Od data cleaning do database lock}
+  \SlideID{sec02-cleaning-lock}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Data cleaning}
+    \end{beamercolorbox}
+
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Review}
+    \end{beamercolorbox}
+
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Database lock}
+    \end{beamercolorbox}
+  \end{columns}
+
+  \vspace{0.45cm}
+
+  \begin{itemize}
+    \item cleaning porządkuje wpisy i zamyka otwarte pytania,
+    \item review potwierdza gotowość danych do analizy,
+    \item lock oznacza zamrożenie bazy do analiz statystycznych.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-demo
+\DemoFrame{Co pokażę w demo}{
+  listę pacjentów, układ wizyt, strukturę formularzy, przykładowe pola, walidacje, query, audit trail oraz to, jak wygląda droga do cleaned database.
+}
+
+% SLIDE ID: sec02-quality
+\begin{frame}{Dlaczego jakość danych zaczyna się w EDC}
+  \SlideID{sec02-quality}
+  \begin{itemize}
+    \item większość problemów jakościowych zaczyna się na etapie wpisu,
+    \item dobra struktura formularza zmniejsza liczbę późniejszych pytań,
+    \item im lepszy projekt EDC, tym mniej ręcznych korekt dalej w procesie.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-user-errors
+\begin{frame}{Najczęstsze błędy użytkowników}
+  \SlideID{sec02-user-errors}
+  \begin{itemize}
+    \item wpis do niewłaściwej wizyty lub formularza,
+    \item pominięcie pola obowiązkowego,
+    \item brak reakcji na query,
+    \item poprawa danych bez zrozumienia źródła problemu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-mini-case
+\CaseStudyFrame{Pacjent ma wynik poza normą — co robi system?}{
+  W formularzu laboratoryjnym wpisano wynik znacząco wykraczający poza dopuszczalny zakres albo poza spodziewaną normę kliniczną.
+}{
+  System może zgłosić walidację, oznaczyć wpis do przeglądu, uruchomić query i pozostawić pełny ślad dalszych korekt w audit trail.
+}

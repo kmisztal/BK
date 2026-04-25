@@ -2,32 +2,168 @@
 
 % SLIDE ID: sec09-goal
 \BlockGoalFrame{\SlideID{sec09-goal}}{
-  \item oddzielić realne zastosowania AI od marketingowych haseł,
-  \item wskazać obszary o największym potencjale praktycznym,
-  \item omówić granice automatyzacji i potrzebę nadzoru człowieka.
+  \item zobaczyć realne, a nie marketingowe zastosowania \texttt{AI} w badaniach klinicznych,
+  \item zrozumieć, gdzie \texttt{AI} może wspierać operacje i jakość danych,
+  \item uporządkować ograniczenia, walidację i odpowiedzialność człowieka.
 }
 
-% SLIDE ID: sec09-value
-\begin{frame}{Gdzie AI wnosi realną wartość}
-  \SlideID{sec09-value}
+% SLIDE ID: sec09-what-is-ai
+\begin{frame}{Czym AI może być w badaniach klinicznych}
+  \SlideID{sec09-what-is-ai}
   \begin{itemize}
-    \item AI może wspierać jakość danych, automatyzację procesów i analizę sygnałów.
-    \item Największy efekt pojawia się tam, gdzie istnieją duże wolumeny danych i powtarzalne operacje.
-    \item Ta sekcja może później zawierać zarówno przykłady użyteczne, jak i ograniczenia regulacyjne.
+    \item zestaw metod wspierających rozpoznawanie wzorców, klasyfikację i analizę treści,
+    \item narzędzie do pracy na danych operacyjnych, klinicznych i dokumentacyjnych,
+    \item system podpowiadający ryzyko, a nie magiczny moduł podejmujący decyzje za zespół,
+    \item warto myśleć o \texttt{AI} przez pryzmat konkretnego procesu, nie przez modne etykiety.
   \end{itemize}
 \end{frame}
 
-% SLIDE ID: sec09-questions
-\begin{frame}{Pytania do rozwinięcia}
-  \SlideID{sec09-questions}
+% SLIDE ID: sec09-ml-nlp-genai
+\begin{frame}{Machine Learning, NLP, Generative AI}
+  \SlideID{sec09-ml-nlp-genai}
   \begin{itemize}
-    \item które procesy są gotowe na automatyzację już dziś,
-    \item gdzie potrzebny jest pełny nadzór człowieka,
-    \item jak dokumentować i walidować rozwiązania AI.
+    \item \texttt{Machine Learning}: wykrywanie wzorców, scoring ryzyka, predykcje.
+    \item \texttt{NLP}: analiza tekstu, dokumentów, narracji medycznych i korespondencji.
+    \item \texttt{Generative AI}: szkice podsumowań, sugestie treści, wyszukiwanie w dokumentach.
+    \item W praktyce najważniejsze pytanie brzmi: \emph{co system rekomenduje i kto to zatwierdza?}
   \end{itemize}
 \end{frame}
 
-% SLIDE ID: sec09-discussion
-\DiscussionFrame{AI jako wsparcie czy decyzja?}{
-  W których momentach procesu badania AI może rekomendować, a w których nie powinna podejmować decyzji bez człowieka?
+% SLIDE ID: sec09-ai-assistant
+\begin{frame}{AI jako asystent, nie zastępca}
+  \SlideID{sec09-ai-assistant}
+  \begin{itemize}
+    \item \texttt{AI} może wskazać problem, priorytet albo możliwe wyjaśnienie.
+    \item Nie powinna samodzielnie zamykać \texttt{query}, klasyfikować \texttt{SAE} ani podejmować decyzji medycznej.
+    \item Człowiek pozostaje właścicielem decyzji, dokumentacji i odpowiedzialności regulacyjnej.
+    \item Dobra automatyzacja skraca pracę zespołu, ale nie usuwa nadzoru.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-where-ai-works
+\begin{frame}{Gdzie AI działa dziś}
+  \SlideID{sec09-where-ai-works}
+  \begin{itemize}
+    \item \texttt{data cleaning} i wykrywanie anomalii w danych,
+    \item automatyczne sugestie \texttt{query} dla niespójnych wpisów,
+    \item \texttt{risk-based monitoring} i priorytetyzacja ośrodków,
+    \item predykcja rekrutacji i analiza opóźnień,
+    \item analiza dokumentów, medical coding i analiza obrazów.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-data-cleaning
+\begin{frame}{Data cleaning i wykrywanie anomalii}
+  \SlideID{sec09-data-cleaning}
+  \begin{itemize}
+    \item modele mogą wykrywać nietypowe zakresy, brakujące wzorce i niespójne sekwencje danych,
+    \item system może porównywać zachowanie ośrodka z resztą badania,
+    \item to wsparcie dla data managera, a nie automatyczne stwierdzenie błędu,
+    \item wynik modelu powinien prowadzić do pytania, nie do bezrefleksyjnej akcji.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-query-rbm
+\begin{frame}{Query suggestions i risk-based monitoring}
+  \SlideID{sec09-query-rbm}
+  \begin{itemize}
+    \item \texttt{AI} może proponować treść \texttt{query} na podstawie reguł i podobnych przypadków.
+    \item Może też wskazywać ośrodki o podwyższonym ryzyku operacyjnym lub jakościowym.
+    \item W \texttt{RBM} przydatne są sygnały o opóźnieniach, brakach danych i nietypowych odchyleniach.
+    \item Nadal potrzebna jest decyzja człowieka: czy to realny sygnał, czy fałszywy alarm.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-recruitment-selection
+\begin{frame}{Rekrutacja, selekcja pacjentów i dokumenty}
+  \SlideID{sec09-recruitment-selection}
+  \begin{itemize}
+    \item predykcja rekrutacji pomaga ocenić tempo i ryzyko niedowiezienia targetu,
+    \item algorytmy mogą wspierać wyszukiwanie potencjalnie pasujących pacjentów,
+    \item \texttt{NLP} pomaga przeszukiwać dokumenty, protokoły i kryteria włączenia / wyłączenia,
+    \item tu szczególnie ważne są jakość źródeł, bias i kontrola nad kryteriami.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-coding-imaging
+\begin{frame}{Medical coding i analiza obrazów}
+  \SlideID{sec09-coding-imaging}
+  \begin{itemize}
+    \item \texttt{AI} może wspierać mapowanie terminów do słowników medycznych,
+    \item może też pomagać w klasyfikacji treści opisowych i priorytetyzacji review,
+    \item w badaniach obrazowych wspiera analizę wzorców i wstępne oznaczanie zmian,
+    \item obszary te są użyteczne, ale wymagają szczególnie mocnej walidacji i kontroli jakości.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-risky
+\begin{frame}{Gdzie AI jest ryzykowne}
+  \SlideID{sec09-risky}
+  \begin{itemize}
+    \item tam, gdzie wynik modelu jest nieczytelny i trudny do uzasadnienia,
+    \item tam, gdzie dane uczące są niepełne, stronnicze albo historycznie złej jakości,
+    \item tam, gdzie system zaczyna wpływać na decyzje kliniczne bez jasnego nadzoru,
+    \item tam, gdzie użytkownik ufa sugestii bardziej niż danym źródłowym.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-validation
+\begin{frame}{Co trzeba walidować}
+  \SlideID{sec09-validation}
+  \begin{itemize}
+    \item dane wejściowe i ich jakość,
+    \item logikę modelu lub zasady generowania odpowiedzi,
+    \item powtarzalność wyników i granice działania,
+    \item sposób prezentacji rekomendacji użytkownikowi,
+    \item ślad decyzji: kto zaakceptował, odrzucił lub zmienił sugestię.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-explainability-bias
+\begin{frame}{Explainability, bias i zgodność regulacyjna}
+  \SlideID{sec09-explainability-bias}
+  \begin{itemize}
+    \item trzeba rozumieć, na jakiej podstawie system wskazuje ryzyko lub rekomendację,
+    \item trzeba ocenić, czy model nie wzmacnia istniejących błędów i nierówności danych,
+    \item trzeba zapewnić dokumentację, wersjonowanie i kontrolę zmian,
+    \item zgodność regulacyjna oznacza możliwość obrony procesu podczas audytu lub inspekcji.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-human-responsibility
+\begin{frame}{Odpowiedzialność człowieka pozostaje kluczowa}
+  \SlideID{sec09-human-responsibility}
+  \begin{itemize}
+    \item \texttt{AI} może rekomendować, ale to człowiek odpowiada za decyzję.
+    \item Zespół musi wiedzieć, kiedy zaufać sugestii, a kiedy ją odrzucić.
+    \item Procedury powinny jasno opisywać użycie, review i eskalację wyjątków.
+    \item Bez tego nawet dobry model staje się ryzykiem operacyjnym i regulacyjnym.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-demo
+\DemoFrame{AI w operacjach badania klinicznego}{
+  \begin{itemize}
+    \item przykład wykrywania nietypowych wzorców danych,
+    \item przykład sugestii \texttt{query} dla niespójnego wpisu,
+    \item przykład dashboardu ryzyka dla \texttt{RBM},
+    \item przykład wyszukiwania informacji w dokumentach badania.
+  \end{itemize}
 }
+
+% SLIDE ID: sec09-case
+\CaseStudyFrame{AI wykrywa nietypowy wzorzec danych w ośrodku}{
+  Model wskazuje, że jeden ośrodek ma wyjątkowo mało odchyleń laboratoryjnych, bardzo szybkie uzupełnianie formularzy i nietypowo jednorodne dane między pacjentami.
+}{
+  Czy to sygnał jakościowy, problem operacyjny, a może cecha populacji? Jakie działania powinien podjąć zespół zanim wyciągnie wnioski lub uruchomi eskalację?
+}
+
+% SLIDE ID: sec09-wrap
+\begin{frame}{Najważniejsza myśl z bloku AI}
+  \SlideID{sec09-wrap}
+  \begin{itemize}
+    \item Najbardziej użyteczne \texttt{AI} w badaniach klinicznych wspiera konkretne procesy.
+    \item Największe ryzyko pojawia się wtedy, gdy zespół nie rozumie ograniczeń modelu.
+    \item Dobre wdrożenie \texttt{AI} wymaga walidacji, przejrzystości i stałego nadzoru człowieka.
+  \end{itemize}
+\end{frame}

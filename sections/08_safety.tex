@@ -1,0 +1,139 @@
+\section{Safety / AE / SAE}
+
+% SLIDE ID: sec08-goal
+\BlockGoalFrame{\SlideID{sec08-goal}}{
+  \item zrozumieć przepływ informacji o bezpieczeństwie między pacjentem, ośrodkiem, \texttt{EDC} i systemem safety,
+  \item odróżnić \texttt{AE}, \texttt{SAE} i \texttt{SUSAR},
+  \item zobaczyć, gdzie najczęściej pojawiają się opóźnienia i błędy.
+}
+
+% SLIDE ID: sec08-ae-sae-susar
+\begin{frame}{AE, SAE i SUSAR}
+  \SlideID{sec08-ae-sae-susar}
+  \begin{itemize}
+    \item \texttt{AE}: każde niekorzystne zdarzenie medyczne u uczestnika badania.
+    \item \texttt{SAE}: zdarzenie ciężkie, np. hospitalizacja, zagrożenie życia, zgon.
+    \item \texttt{SUSAR}: ciężka, nieoczekiwana reakcja związana z badanym lekiem.
+    \item Kluczowe pytanie brzmi nie tylko: \emph{co się stało?}, ale też: \emph{jak szybko i gdzie to trafi?}
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec08-safety-flow
+\begin{frame}{Przepływ safety od objawu do follow-up}
+  \SlideID{sec08-safety-flow}
+  \begin{enumerate}
+    \item Pacjent zgłasza objaw.
+    \item Ośrodek dokumentuje \texttt{AE}.
+    \item Badacz ocenia ciężkość i związek z leczeniem.
+    \item Pytanie decyzyjne: czy to \texttt{SAE}?
+    \item Jeśli tak, rusza pilne raportowanie do sponsora / \texttt{CRO}.
+    \item System safety prowadzi dalszy follow-up i medical review.
+  \end{enumerate}
+\end{frame}
+
+% SLIDE ID: sec08-edc-dependency
+\begin{frame}{Dlaczego safety zależy od danych w EDC}
+  \SlideID{sec08-edc-dependency}
+  \begin{itemize}
+    \item \texttt{EDC} dostarcza kontekst: daty wizyt, leki, wyniki badań, kryteria włączenia.
+    \item Dane z \texttt{EDC} pomagają ocenić czas wystąpienia zdarzenia i jego tło kliniczne.
+    \item Niespójność między \texttt{AE} w \texttt{EDC} a zgłoszeniem safety tworzy ryzyko inspekcyjne.
+    \item Jakość wpisu w \texttt{EDC} wpływa na szybkość i jakość medical review.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec08-medical-review
+\begin{frame}{Medical Review: gdzie dane zamieniają się w decyzję}
+  \SlideID{sec08-medical-review}
+  \begin{itemize}
+    \item Medical reviewer sprawdza kliniczny sens zgłoszenia i jego kompletność.
+    \item Weryfikowane są: ciężkość, związek z leczeniem, oczekiwalność i potrzeba follow-up.
+    \item Przy niejasnościach wracają pytania do ośrodka lub do zespołu data management.
+    \item To miejsce, w którym słabe dane operacyjne szybko stają się problemem regulacyjnym.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec08-sae-reporting
+\begin{frame}{SAE: raportowanie i terminy}
+  \SlideID{sec08-sae-reporting}
+  \begin{itemize}
+    \item \texttt{SAE} wymaga pilnej eskalacji po uzyskaniu informacji przez ośrodek.
+    \item System powinien wspierać szybkie zgłoszenie w oknie wymaganym przez procedurę badania.
+    \item Każde opóźnienie trzeba umieć wyjaśnić i udokumentować.
+    \item Proces nie kończy się na pierwszym zgłoszeniu: potrzebne są aktualizacje i follow-up.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec08-edc-integration
+\begin{frame}{Integracja EDC z systemem safety}
+  \SlideID{sec08-edc-integration}
+  \begin{itemize}
+    \item Integracja może przekazywać dane o pacjencie, zdarzeniu i tle klinicznym.
+    \item Ogranicza podwójne wpisywanie tych samych informacji.
+    \item Wspiera spójność między \texttt{EDC}, safety database i raportowaniem.
+    \item Nadal potrzebna jest kontrola człowieka: integracja nie zastępuje oceny medycznej.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec08-roles
+\begin{frame}{Rola badacza i rola sponsora / CRO}
+  \SlideID{sec08-roles}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \begin{DefinitionBox}{Badacz / ośrodek}
+      \begin{itemize}
+        \item rozpoznaje i dokumentuje zdarzenie,
+        \item ocenia ciężkość i związek,
+        \item zgłasza \texttt{SAE} w terminie,
+        \item odpowiada na pytania follow-up.
+      \end{itemize}
+    \end{DefinitionBox}
+    \column{0.48\textwidth}
+    \begin{ExampleBox}{Sponsor / CRO}
+      \begin{itemize}
+        \item odbiera i weryfikuje zgłoszenie,
+        \item prowadzi medical review,
+        \item nadzoruje terminy i jakość procesu,
+        \item ocenia obowiązki dalszego raportowania.
+      \end{itemize}
+    \end{ExampleBox}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec08-typical-errors
+\begin{frame}{Typowe błędy w procesie safety}
+  \SlideID{sec08-typical-errors}
+  \begin{itemize}
+    \item wpisanie \texttt{AE} do \texttt{EDC}, ale bez równoległego zgłoszenia \texttt{SAE},
+    \item niespójne daty między dokumentacją źródłową, \texttt{EDC} i safety database,
+    \item brak oceny związku z leczeniem albo błędna klasyfikacja ciężkości,
+    \item opóźnione follow-up lub brak domknięcia otwartych pytań.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec08-demo
+\DemoFrame{Przepływ AE / SAE w systemach}{
+  \begin{itemize}
+    \item gdzie w \texttt{EDC} pojawia się informacja o zdarzeniu,
+    \item jaki moment uruchamia zgłoszenie do systemu safety,
+    \item jak wygląda różnica między pierwszym zgłoszeniem a follow-up,
+    \item gdzie widać odpowiedzialność ośrodka, sponsora i zespołu safety.
+  \end{itemize}
+}
+
+% SLIDE ID: sec08-case-hospitalization
+\CaseStudyFrame{Pacjent trafia do szpitala po wizycie baseline}{
+  Pacjent dzień po wizycie \texttt{Baseline} trafia do szpitala z nasilonymi objawami. Ośrodek dowiaduje się o hospitalizacji telefonicznie, a część danych pojawia się później w dokumentacji medycznej.
+}{
+  Co musi się wydarzyć w systemach? Jak dokumentujemy \texttt{AE}, kiedy rozpoznajemy \texttt{SAE}, jakie dane trafiają do \texttt{EDC}, co idzie do safety database i kto pilnuje follow-up?
+}
+
+% SLIDE ID: sec08-wrap
+\begin{frame}{Najważniejsza myśl z bloku safety}
+  \SlideID{sec08-wrap}
+  \begin{itemize}
+    \item Safety to nie pojedynczy formularz, tylko zsynchronizowany proces.
+    \item Największe ryzyko powstaje na styku: pacjent, ośrodek, \texttt{EDC}, system safety.
+    \item Dobra technologia pomaga, ale terminowość i odpowiedzialność ludzi pozostają kluczowe.
+  \end{itemize}
+\end{frame}

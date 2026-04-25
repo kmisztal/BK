@@ -2,25 +2,136 @@
 
 % SLIDE ID: sec05-goal
 \BlockGoalFrame{\SlideID{sec05-goal}}{
-  \item zrozumieć rolę randomizacji i zarządzania leczeniem badanym,
-  \item pokazać zależność między protokołem a konfiguracją systemu,
-  \item omówić najważniejsze ryzyka operacyjne.
+  \item zrozumieć rolę systemów randomizacji w badaniu klinicznym,
+  \item zobaczyć, jak system zarządza przypisaniem leku badanego,
+  \item omówić ryzyka operacyjne i skutki błędów użytkownika.
 }
 
-% SLIDE ID: sec05-core
-\begin{frame}{Randomizacja i zarządzanie leczeniem badanym}
-  \SlideID{sec05-core}
+% SLIDE ID: sec05-ivrs
+\begin{frame}{Czym jest IVRS}
+  \SlideID{sec05-ivrs}
   \begin{itemize}
-    \item IWRS/IVRS wspiera randomizację, przydział leczenia i logistykę dostaw.
-    \item System musi być jednocześnie prosty dla ośrodka i rygorystyczny proceduralnie.
-    \item W tej sekcji warto później pokazać zależności między protokołem a logiką randomizacji.
+    \item IVRS to telefoniczny system interaktywny używany historycznie i nadal w części badań,
+    \item użytkownik wykonuje operacje przez połączenie głosowe i wybór opcji,
+    \item system wspiera randomizację i logistykę leku bez konieczności pracy w interfejsie webowym.
   \end{itemize}
 \end{frame}
 
-% SLIDE ID: sec05-warning
-\begin{frame}{Ryzyko konfiguracyjne}
-  \SlideID{sec05-warning}
-  \begin{WarningBox}
-    Nawet dobrze opisana randomizacja w protokole może zostać źle odwzorowana w systemie, jeśli zespół nie przełoży jej na precyzyjne reguły operacyjne i scenariusze wyjątków.
-  \end{WarningBox}
+% SLIDE ID: sec05-iwrs
+\begin{frame}{Czym jest IWRS}
+  \SlideID{sec05-iwrs}
+  \begin{itemize}
+    \item IWRS to internetowy system randomizacji i zarządzania lekiem badanym,
+    \item zwykle przejmuje funkcje IVRS w nowoczesnych badaniach,
+    \item łączy logikę randomizacji, zapasy leku i zapis operacji w jednym miejscu.
+  \end{itemize}
 \end{frame}
+
+% SLIDE ID: sec05-randomization
+\begin{frame}{Randomizacja, stratyfikacja, zaślepienie}
+  \SlideID{sec05-randomization}
+  \begin{itemize}
+    \item randomizacja przypisuje pacjenta do ramienia badania według ustalonych reguł,
+    \item stratyfikacja pomaga utrzymać równowagę między grupami,
+    \item zaślepienie chroni badanie przed ujawnieniem przydziału leczenia.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-drug-management
+\begin{frame}{Zarządzanie lekiem badanym}
+  \SlideID{sec05-drug-management}
+  \begin{itemize}
+    \item system przypisuje numer zestawu lub numer opakowania,
+    \item kontroluje dostępność zapasu w ośrodku,
+    \item pozwala śledzić wydanie, zwrot i status leku badanego.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-unblinding
+\begin{frame}{Emergency unblinding}
+  \SlideID{sec05-unblinding}
+  \begin{itemize}
+    \item to kontrolowane ujawnienie przydziału leczenia w sytuacji medycznie uzasadnionej,
+    \item nie jest zwykłą operacją administracyjną,
+    \item każda taka akcja musi być uzasadniona, zapisana i możliwa do audytu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-demo-flow
+\begin{frame}{Demo flow: od kwalifikacji do przypisania leku}
+  \SlideID{sec05-demo-flow}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.18\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.6em,rounded=true]{block body}
+      \centering
+      \textbf{Kryteria}
+    \end{beamercolorbox}
+
+    \column{0.18\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.6em,rounded=true]{block body}
+      \centering
+      \textbf{Randomizacja}
+    \end{beamercolorbox}
+
+    \column{0.18\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.6em,rounded=true]{block body}
+      \centering
+      \textbf{Ramię}
+    \end{beamercolorbox}
+
+    \column{0.18\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.6em,rounded=true]{block body}
+      \centering
+      \textbf{Lek}
+    \end{beamercolorbox}
+
+    \column{0.18\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.6em,rounded=true]{block body}
+      \centering
+      \textbf{Zapis}
+    \end{beamercolorbox}
+  \end{columns}
+
+  \vspace{0.45cm}
+
+  \begin{itemize}
+    \item pacjent spełnia kryteria,
+    \item system uruchamia randomizację,
+    \item przypisywane jest ramię badania i numer zestawu,
+    \item cała operacja zostaje zapisana w systemie.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-operational-risks
+\begin{frame}{Ryzyka operacyjne}
+  \SlideID{sec05-operational-risks}
+  \begin{itemize}
+    \item randomizacja niezgodna z protokołem,
+    \item przypisanie niewłaściwego zestawu leku,
+    \item błędny zwrot lub odpisanie zapasu,
+    \item nieuprawnione ujawnienie przydziału leczenia.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-consequences
+\begin{frame}{Konsekwencje błędów}
+  \SlideID{sec05-consequences}
+  \begin{itemize}
+    \item zagrożenie dla bezpieczeństwa pacjenta,
+    \item naruszenie zaślepienia,
+    \item problemy z rozliczeniem leku badanego,
+    \item ryzyko odchyleń protokołowych i wpływu na wiarygodność badania.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-demo
+\DemoFrame{Randomizacja i przypisanie leku}{
+  kwalifikacja pacjenta, uruchomienie randomizacji, przypisanie ramienia badania, nadanie numeru zestawu oraz zapis całej operacji w systemie.
+}
+
+% SLIDE ID: sec05-case
+\CaseStudyFrame{Co się stanie, jeśli użytkownik omyłkowo odeśle lek albo ujawni randomizację?}{
+  Użytkownik wykonuje niewłaściwą operację logistyczną albo poznaje przypisanie pacjenta do ramienia badania poza kontrolowaną procedurą.
+}{
+  Może dojść do zaburzenia zapasu, błędnego wydania leku, naruszenia zaślepienia i konieczności formalnego wyjaśnienia incydentu w dokumentacji badania.
+}

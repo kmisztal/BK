@@ -1,0 +1,133 @@
+\section{Dzienniczek pacjenta / ePRO}
+
+% SLIDE ID: sec04-goal
+\BlockGoalFrame{\SlideID{sec04-goal}}{
+  \item pokazać, jak dane mogą być zbierane bezpośrednio od pacjenta,
+  \item zrozumieć wpływ ePRO na ciągłość i jakość danych,
+  \item omówić korzyści, ograniczenia i ryzyka tego modelu pracy.
+}
+
+% SLIDE ID: sec04-what-is-epro
+\begin{frame}{Czym jest ePRO}
+  \SlideID{sec04-what-is-epro}
+  \begin{DefinitionBox}
+    ePRO to elektroniczne zbieranie danych zgłaszanych bezpośrednio przez pacjenta, bez pośredniego przepisywania ich przez personel ośrodka.
+  \end{DefinitionBox}
+
+  \vspace{0.35cm}
+
+  \begin{itemize}
+    \item wpis odbywa się w aplikacji lub dzienniczku elektronicznym,
+    \item dane pojawiają się szybciej niż przy klasycznym kontakcie wizytowym,
+    \item system może wspierać regularność wpisów i ich kompletność.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-diary
+\begin{frame}{Czym jest dzienniczek pacjenta}
+  \SlideID{sec04-diary}
+  \begin{itemize}
+    \item to narzędzie do codziennych lub cyklicznych wpisów pacjenta,
+    \item może działać na telefonie, tablecie albo w przeglądarce,
+    \item zwykle służy do zbierania objawów, przyjmowania leku i pomiarów domowych.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-differences
+\begin{frame}{ePRO, eCOA i klasyczny CRF}
+  \SlideID{sec04-differences}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMTeal}{ePRO}}\par\medskip
+      dane raportowane bezpośrednio przez pacjenta
+    \end{beamercolorbox}
+
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMDarkBlue}{eCOA}}\par\medskip
+      szersza kategoria elektronicznych ocen klinicznych
+    \end{beamercolorbox}
+
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMOrange}{CRF}}\par\medskip
+      dane wpisywane przez personel badawczy
+    \end{beamercolorbox}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec04-patient-source
+\begin{frame}{Pacjent jako źródło danych}
+  \SlideID{sec04-patient-source}
+  \begin{itemize}
+    \item objawy i samopoczucie między wizytami,
+    \item jakość życia,
+    \item przyjmowanie leku,
+    \item działania niepożądane,
+    \item pomiary domowe, np. ciśnienie lub glikemia.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-compliance
+\begin{frame}{Compliance pacjenta}
+  \SlideID{sec04-compliance}
+  \begin{itemize}
+    \item system może mierzyć regularność wpisów,
+    \item wysoki compliance zwiększa użyteczność danych,
+    \item niski compliance oznacza luki, opóźnienia i większe ryzyko błędnej interpretacji.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-reminders
+\begin{frame}{Przypomnienia i brakujące dane}
+  \SlideID{sec04-reminders}
+  \begin{itemize}
+    \item przypomnienia pomagają utrzymać rytm wpisów,
+    \item system może oznaczać niewypełnione wpisy lub opóźnienia,
+    \item brakujące dane nadal pozostają problemem klinicznym i analitycznym.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-integration
+\begin{frame}{Integracja z EDC}
+  \SlideID{sec04-integration}
+  \begin{itemize}
+    \item dane z dzienniczka mogą trafiać do EDC automatycznie,
+    \item ważne jest mapowanie pacjenta, wizyty i właściwych formularzy,
+    \item dobra integracja zmniejsza ręczne przepisywanie i ryzyko błędów.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-risks
+\begin{frame}{Co może pójść źle?}
+  \SlideID{sec04-risks}
+  \begin{itemize}
+    \item słaba jakość wpisów lub niepełne odpowiedzi,
+    \item przeciążenie pacjenta liczbą pytań,
+    \item problemy z prywatnością i bezpieczeństwem dostępu,
+    \item trudności techniczne po stronie urządzenia lub aplikacji.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-demo
+\DemoFrame{Dzienniczek pacjenta}{
+  interfejs pacjenta, harmonogram wpisów, przypomnienia, widok brakujących danych oraz przykład przepływu informacji do systemu centralnego.
+}
+
+% SLIDE ID: sec04-quality
+\begin{frame}{Wpływ ePRO na jakość i ciągłość danych}
+  \SlideID{sec04-quality}
+  \begin{itemize}
+    \item dane są zbierane bliżej momentu wystąpienia objawu lub zdarzenia,
+    \item maleje ryzyko odtwarzania informacji z pamięci podczas wizyty,
+    \item jednocześnie rośnie znaczenie użyteczności narzędzia i motywacji pacjenta.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-case
+\CaseStudyFrame{Pacjent zgłasza objaw w dzienniczku — co dzieje się dalej?}{
+  Pacjent wpisuje w dzienniczku nasilony ból głowy i zaznacza, że objaw pojawił się po przyjęciu dawki badanego leku.
+}{
+  System może zapisać wpis, oznaczyć go jako istotny klinicznie, przekazać dane do dalszego przeglądu i uruchomić proces oceny po stronie zespołu badania.
+}

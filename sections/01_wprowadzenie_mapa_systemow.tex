@@ -1,43 +1,125 @@
 \section{Wprowadzenie i mapa systemów eClinical}
 
 % SLIDE ID: sec01-goal
-\BlockGoalFrame{\SlideID{sec01-goal}}{
-  \item uporządkować mapę systemów używanych w badaniu klinicznym,
-  \item pokazać zależności między procesem badania a narzędziami,
-  \item przygotować grunt pod dalsze moduły praktyczne.
-}
-
-% SLIDE ID: sec01-role
-\begin{frame}{Rola systemów eClinical}
-  \SlideID{sec01-role}
+\begin{frame}{Cel zajęć}
+  \SlideID{sec01-goal}
   \begin{itemize}
-    \item Systemy eClinical wspierają planowanie, prowadzenie i nadzór nad badaniem klinicznym.
-    \item Każdy moduł odpowiada za inny fragment procesu: dane, operacje, bezpieczeństwo lub dokumentację.
-    \item W praktyce największą wartość daje nie pojedynczy system, ale spójny ekosystem narzędzi.
+    \item zobaczyć mapę najważniejszych systemów eClinical,
+    \item zrozumieć, jak wspierają przebieg badania klinicznego,
+    \item połączyć teorię z demo i pracą warsztatową.
   \end{itemize}
 \end{frame}
 
+% SLIDE ID: sec01-audience
+\begin{frame}{Dla kogo jest ten wykład}
+  \SlideID{sec01-audience}
+  \begin{itemize}
+    \item dla osób ze studiów podyplomowych związanych z badaniami klinicznymi,
+    \item dla przyszłych koordynatorów, monitorów i członków zespołów projektowych,
+    \item dla uczestników, którzy chcą rozumieć systemy używane w praktyce.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec01-assumptions
+\begin{frame}{Założenia na start}
+  \SlideID{sec01-assumptions}
+  \begin{itemize}
+    \item znacie podstawy badań klinicznych,
+    \item nie musicie znać systemów informatycznych,
+    \item zaczynamy od logiki procesu, a dopiero potem przechodzimy do narzędzi.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec01-agenda
+\begin{frame}{Agenda dnia}
+  \SlideID{sec01-agenda}
+  \small
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.10\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Blok & Temat \\
+    \midrule
+    1 & Wprowadzenie i mapa systemów eClinical \\
+    2 & EDC / eCRF \\
+    3 & Warsztat EDC \\
+    4 & Dzienniczek pacjenta / ePRO \\
+    5 & IWRS / IVRS \\
+    6 & CTMS \\
+    7 & eTMF \\
+    8 & Safety / AE / SAE \\
+    9 & AI w badaniach klinicznych \\
+    10 & Przyszłość i podsumowanie \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
 % SLIDE ID: sec01-map
-\begin{frame}{Mapa architektury rozwiązania}
+\begin{frame}{Mapa systemów eClinical}
   \SlideID{sec01-map}
   \begin{columns}[T,onlytextwidth]
     \column{0.48\textwidth}
-    \begin{block}{Warstwy}
+    \begin{block}{Systemy widoczne w pracy z danymi}
       \begin{itemize}
-        \item źródła danych,
-        \item systemy operacyjne,
-        \item raportowanie i nadzór.
+        \item EDC / eCRF,
+        \item ePRO,
+        \item safety.
       \end{itemize}
     \end{block}
 
     \column{0.48\textwidth}
-    \begin{block}{Przykładowe moduły}
-      EDC, ePRO, IWRS/IVRS, CTMS, eTMF, safety database, warstwa integracyjna.
+    \begin{block}{Systemy operacyjne i nadzorcze}
+      \begin{itemize}
+        \item IWRS / IVRS,
+        \item CTMS,
+        \item eTMF.
+      \end{itemize}
     \end{block}
   \end{columns}
 \end{frame}
 
-% SLIDE ID: sec01-discussion
-\DiscussionFrame{Jak uczestnik widzi systemy eClinical?}{
-  Które systemy są najbardziej widoczne dla badacza, koordynatora i pacjenta, a które działają bardziej w tle organizacyjnym?
-}
+% SLIDE ID: sec01-story
+\begin{frame}{Główna historia dnia}
+  \SlideID{sec01-story}
+  \begin{itemize}
+    \item przejdziemy przez jedno badanie kliniczne od startu do zamknięcia,
+    \item w każdym kroku zobaczymy, jaki system wspiera dany proces,
+    \item dzięki temu łatwiej będzie połączyć narzędzie z realną pracą zespołu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec01-workflow
+\begin{frame}{Jak będziemy pracować}
+  \SlideID{sec01-workflow}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.24\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Teoria}
+    \end{beamercolorbox}
+
+    \column{0.24\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Demo}
+    \end{beamercolorbox}
+
+    \column{0.24\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Ćwiczenie}
+    \end{beamercolorbox}
+
+    \column{0.24\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{Dyskusja}
+    \end{beamercolorbox}
+  \end{columns}
+
+  \vspace{0.6cm}
+
+  \begin{itemize}
+    \item EDC będzie dostępne także dla uczestników,
+    \item pozostałe systemy pokazuje prowadzący,
+    \item dodatkowo zobaczymy dzienniczek pacjenta / ePRO.
+  \end{itemize}
+\end{frame}

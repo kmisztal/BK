@@ -1,34 +1,107 @@
 \section{Warsztat EDC}
 
 % SLIDE ID: sec03-goal
-\BlockGoalFrame{\SlideID{sec03-goal}}{
-  \item przejść od protokołu do logicznego modelu wizyt,
-  \item zobaczyć, jak myśleć o polach, walidacjach i query,
-  \item przygotować uczestników do samodzielnego projektowania prostych struktur.
-}
-
-% SLIDE ID: sec03-workshop
-\begin{frame}{Warsztat projektowania EDC}
-  \SlideID{sec03-workshop}
+\begin{frame}{Cel warsztatu}
+  \SlideID{sec03-goal}
   \begin{itemize}
-    \item Ta część może później zawierać ćwiczenie krok po kroku.
-    \item Warto pokazać przejście od protokołu do struktury wizyt i formularzy.
-    \item Dobrym dodatkiem będzie analiza najczęstszych błędów projektowych.
+    \item wejść do systemu jako `CRC / site user`,
+    \item wprowadzić dane pacjenta do dwóch wizyt,
+    \item zobaczyć, jak system reaguje na błędy, braki i query.
   \end{itemize}
 \end{frame}
 
-% SLIDE ID: sec03-format
-\begin{frame}{Proponowany format warsztatu}
-  \SlideID{sec03-format}
+% SLIDE ID: sec03-login
+\begin{frame}{Instrukcja logowania}
+  \SlideID{sec03-login}
   \begin{enumerate}
-    \item definicja punktów końcowych,
-    \item model wizyt i zdarzeń,
-    \item projekt formularza,
-    \item przykładowe reguły walidacyjne.
+    \item otwórz środowisko szkoleniowe EDC,
+    \item zaloguj się danymi przekazanymi przez prowadzącego,
+    \item wybierz ośrodek i listę pacjentów,
+    \item otwórz przypisany rekord pacjenta szkoleniowego.
   \end{enumerate}
 \end{frame}
 
-% SLIDE ID: sec03-demo
-\DemoFrame{Budowa prostego eCRF}{
-  Pokażemy przejście od strony protokołu do listy wizyt, formularzy i podstawowych reguł walidacyjnych.
-}
+% SLIDE ID: sec03-patient
+\begin{frame}{Scenariusz pacjenta}
+  \SlideID{sec03-patient}
+  \begin{itemize}
+    \item inicjały: `A.K.`
+    \item wiek: `54 lata`
+    \item płeć: kobieta
+    \item wizyta `Screening`: kwalifikacja i badania wstępne
+    \item wizyta `Baseline`: potwierdzenie włączenia i dane startowe
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec03-data-entry
+\begin{frame}{Dane do wprowadzenia}
+  \SlideID{sec03-data-entry}
+  \small
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.20\linewidth} >{\raggedright\arraybackslash}p{0.33\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Wizyta & Pole & Wartość \\
+    \midrule
+    Screening & Data zgody & 2026-05-12 \\
+    Screening & Data wizyty & 2026-05-10 \\
+    Screening & Hemoglobina & 13.2 g/dL \\
+    Screening & ALT & 96 U/L \\
+    Screening & Kreatynina & brak \\
+    Baseline & Data wizyty & 2026-05-18 \\
+    Baseline & Randomizacja & Tak \\
+    Baseline & Ciśnienie tętnicze & 128/78 mmHg \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% SLIDE ID: sec03-built-in-issues
+\begin{frame}{Celowo wbudowane problemy / błędy}
+  \SlideID{sec03-built-in-issues}
+  \begin{itemize}
+    \item jeden wynik poza zakresem: `ALT = 96 U/L`,
+    \item jeden brak danych: brak kreatyniny,
+    \item jeden błąd logiczny: data wizyty `Screening` przed datą zgody.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec03-participant-task
+\begin{frame}{Co uczestnik ma zrobić}
+  \SlideID{sec03-participant-task}
+  \begin{enumerate}
+    \item odnaleźć pacjenta i otworzyć właściwe wizyty,
+    \item wprowadzić wszystkie dostępne dane,
+    \item zapisać formularze i sprawdzić komunikaty systemu,
+    \item wskazać, które problemy wymagają poprawy lub wyjaśnienia.
+  \end{enumerate}
+\end{frame}
+
+% SLIDE ID: sec03-query-response
+\begin{frame}{Jak reagować na query}
+  \SlideID{sec03-query-response}
+  \begin{itemize}
+    \item przeczytaj dokładnie, czego dotyczy pytanie,
+    \item wróć do danych źródłowych lub scenariusza pacjenta,
+    \item popraw wpis albo dodaj sensowny komentarz,
+    \item nie zamykaj query „na ślepo”, bez zrozumienia problemu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec03-trainer-notes
+\begin{frame}{Na co zwrócić uwagę podczas ćwiczenia}
+  \SlideID{sec03-trainer-notes}
+  \begin{itemize}
+    \item czy uczestnik trafia do właściwej wizyty i formularza,
+    \item czy rozumie różnicę między błędem, brakiem danych i query,
+    \item czy potrafi logicznie uzasadnić poprawkę,
+    \item czy korzysta z systemu jak użytkownik ośrodka, a nie jak data manager.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec03-summary
+\begin{frame}{Podsumowanie: czego nauczył nas warsztat}
+  \SlideID{sec03-summary}
+  \begin{itemize}
+    \item poprawne wprowadzanie danych wymaga rozumienia struktury badania,
+    \item walidacje pomagają, ale nie zastępują myślenia użytkownika,
+    \item jakość danych zależy od uważności już na poziomie ośrodka.
+  \end{itemize}
+\end{frame}

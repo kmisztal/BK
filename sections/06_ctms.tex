@@ -2,22 +2,111 @@
 
 % SLIDE ID: sec06-goal
 \BlockGoalFrame{\SlideID{sec06-goal}}{
-  \item pokazać CTMS jako system zarządzania operacyjnego,
-  \item odróżnić dane operacyjne od danych klinicznych,
-  \item wskazać miejsca integracji z innymi modułami.
+  \item zrozumieć CTMS jako system zarządzania operacyjnego badaniem,
+  \item odróżnić informacje operacyjne od danych klinicznych w EDC,
+  \item zobaczyć, jak CTMS wspiera ośrodki, monitoring i oversight sponsora/CRO.
 }
 
 % SLIDE ID: sec06-core
-\begin{frame}{CTMS jako warstwa operacyjna}
+\begin{frame}{CTMS jako centrum operacyjne badania}
   \SlideID{sec06-core}
   \begin{itemize}
-    \item CTMS porządkuje działania operacyjne związane z prowadzeniem badania.
-    \item Wspiera planowanie wizyt monitorujących, statusy ośrodków i działania zespołu.
-    \item Często pełni rolę systemu spinającego dane operacyjne z innymi modułami.
+    \item CTMS służy do planowania, śledzenia i nadzoru nad przebiegiem badania,
+    \item koncentruje się na operacjach, a nie na pojedynczych danych klinicznych,
+    \item łączy informacje o ośrodkach, rekrutacji, monitoringu i statusach działań.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-vs-edc
+\begin{frame}{CTMS a EDC}
+  \SlideID{sec06-vs-edc}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMTeal}{EDC}}\par\medskip
+      \begin{itemize}
+        \item dane pacjenta,
+        \item formularze i wizyty,
+        \item walidacje i query.
+      \end{itemize}
+    \end{beamercolorbox}
+
+    \column{0.48\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMDarkBlue}{CTMS}}\par\medskip
+      \begin{itemize}
+        \item ośrodki i plan badania,
+        \item monitoring i działania zespołu,
+        \item statusy, KPI i issue tracking.
+      \end{itemize}
+    \end{beamercolorbox}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec06-sites
+\begin{frame}{Zarządzanie ośrodkami i rekrutacją}
+  \SlideID{sec06-sites}
+  \begin{itemize}
+    \item status uruchomienia ośrodka,
+    \item planowana i rzeczywista rekrutacja,
+    \item gotowość do pierwszego pacjenta,
+    \item porównanie ośrodków pod względem aktywności i tempa pracy.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-monitoring
+\begin{frame}{Jak CTMS wspiera monitoring}
+  \SlideID{sec06-monitoring}
+  \begin{itemize}
+    \item planuje wizyty monitorujące i follow-up,
+    \item porządkuje listę otwartych zadań i obserwacji,
+    \item wspiera przygotowanie raportów i kolejnych działań w ośrodku.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-statuses
+\begin{frame}{Statusy badania, KPI i issue tracking}
+  \SlideID{sec06-statuses}
+  \begin{itemize}
+    \item statusy pokazują, gdzie jest badanie i każdy ośrodek,
+    \item KPI wspierają oversight nad rekrutacją, monitoringiem i terminowością,
+    \item issue tracking porządkuje problemy, właścicieli i terminy działań.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-pm-view
+\begin{frame}{Co widzi Project Manager?}
+  \SlideID{sec06-pm-view}
+  \begin{itemize}
+    \item ogólny status badania i ośrodków,
+    \item postęp rekrutacji i kamienie milowe,
+    \item opóźnienia, ryzyka i otwarte problemy,
+    \item poziom realizacji działań przez zespół i CRO.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-cra-view
+\begin{frame}{Co widzi CRA?}
+  \SlideID{sec06-cra-view}
+  \begin{itemize}
+    \item listę ośrodków i plan wizyt,
+    \item otwarte działania po poprzednim monitoringu,
+    \item status dokumentów i gotowość ośrodka,
+    \item kwestie wymagające eskalacji lub follow-up.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-oversight
+\begin{frame}{Oversight sponsora / CRO}
+  \SlideID{sec06-oversight}
+  \begin{itemize}
+    \item sponsor lub CRO widzi badanie z poziomu operacyjnego,
+    \item może śledzić wykonanie działań bez wchodzenia w każdy szczegół kliniczny,
+    \item CTMS wspiera kontrolę terminów, jakości pracy i eskalacji problemów.
   \end{itemize}
 \end{frame}
 
 % SLIDE ID: sec06-demo
-\DemoFrame{Widok operacyjny badania w CTMS}{
-  Możemy tu później pokazać status ośrodków, plan monitoringu, kamienie milowe i podstawowe KPI zespołu projektowego.
+\DemoFrame{Status ośrodka i wizyta monitorująca}{
+  widok ośrodka, status rekrutacji, plan i wykonanie wizyty monitorującej, otwarte akcje oraz najważniejsze wskaźniki operacyjne.
 }
