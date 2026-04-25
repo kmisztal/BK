@@ -1,0 +1,167 @@
+\section{Case Study: Jedno badanie od A do Z}
+
+% SLIDE ID: sec10-goal
+\BlockGoalFrame{\SlideID{sec10-goal}}{
+  \item spiąć wszystkie systemy w jedną historię badania klinicznego,
+  \item pokazać, że każdy system obsługuje inny etap tego samego procesu,
+  \item zostawić uczestników z całościową mapą przepływu danych i odpowiedzialności.
+}
+
+% SLIDE ID: sec10-overview
+\begin{frame}{Historia dnia: jedno badanie, jeden pacjent, jeden ośrodek}
+  \SlideID{sec10-overview}
+  \begin{itemize}
+    \item Fikcyjne badanie: wieloośrodkowe badanie leku doustnego w chorobie przewlekłej.
+    \item Ośrodek: Site 014 w Krakowie.
+    \item Pacjent: A.K., 54 lata.
+    \item Nasze pytanie brzmi: jak systemy współpracują od startu badania do \texttt{database lock}?
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec10-flow-map
+\begin{frame}{Mapa końcowego flow}
+  \SlideID{sec10-flow-map}
+  \begin{enumerate}
+    \item Start ośrodka w \texttt{CTMS}
+    \item Dokumenty w \texttt{eTMF}
+    \item Zgoda pacjenta
+    \item Screening w \texttt{EDC}
+    \item Randomizacja w \texttt{IWRS}
+    \item Dzienniczek \texttt{ePRO}
+    \item \texttt{AE} i \texttt{SAE}
+    \item Monitoring, \texttt{AI}, data cleaning i \texttt{database lock}
+  \end{enumerate}
+\end{frame}
+
+% SLIDE ID: sec10-ctms-etmf
+\begin{frame}{1--2. Start ośrodka: CTMS i eTMF}
+  \SlideID{sec10-ctms-etmf}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \begin{DefinitionBox}
+      \textbf{\texttt{CTMS}}\par
+      status ośrodka, plan aktywacji, wizyty monitorujące, oversight sponsora.
+    \end{DefinitionBox}
+    \column{0.48\textwidth}
+    \begin{ExampleBox}
+      \textbf{\texttt{eTMF}}\par
+      umowy, CV, delegacje, szkolenia, dokumenty regulacyjne i wersje plików.
+    \end{ExampleBox}
+  \end{columns}
+  \vspace{0.5em}
+  \begin{QuestionBox}
+    Który system odpowiada za gotowość operacyjną, a który za gotowość dokumentacyjną?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec10-consent-screening
+\begin{frame}{3--4. Zgoda pacjenta i screening w EDC}
+  \SlideID{sec10-consent-screening}
+  \begin{itemize}
+    \item Pacjent podpisuje świadomą zgodę w ośrodku.
+    \item Od tego momentu dane mogą wejść do procesu badania.
+    \item \texttt{EDC} rejestruje screening: dane demograficzne, kryteria, wyniki badań, wizytę.
+    \item Walidacje w \texttt{EDC} wychwytują brak danych i niespójności logiczne.
+  \end{itemize}
+  \begin{QuestionBox}
+    Co powinno się stać, jeśli data wizyty screeningowej jest wcześniejsza niż data zgody?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec10-randomization
+\begin{frame}{5. Randomizacja w IWRS}
+  \SlideID{sec10-randomization}
+  \begin{itemize}
+    \item Pacjent spełnia kryteria i przechodzi do randomizacji.
+    \item \texttt{IWRS} przypisuje ramię badania i numer zestawu leku.
+    \item System zapisuje decyzję i wspiera zaślepienie.
+    \item To moment krytyczny: błąd operacyjny wpływa na lek, logistykę i jakość badania.
+  \end{itemize}
+  \begin{QuestionBox}
+    Jakie byłyby skutki omyłkowego ujawnienia randomizacji na tym etapie?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec10-epro
+\begin{frame}{6. Pacjent używa dzienniczka ePRO}
+  \SlideID{sec10-epro}
+  \begin{itemize}
+    \item Pacjent raportuje objawy, przyjmowanie leku i wybrane pomiary domowe.
+    \item System wysyła przypomnienia i pilnuje compliance.
+    \item Część danych wraca do ekosystemu badania jako sygnał do dalszej oceny.
+    \item To pierwszy moment, w którym pacjent staje się aktywnym źródłem danych.
+  \end{itemize}
+  \begin{QuestionBox}
+    Które dane pacjent może raportować sam, a które nadal muszą być potwierdzone przez ośrodek?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec10-ae-safety
+\begin{frame}{7--8. Pojawia się AE, potem SAE}
+  \SlideID{sec10-ae-safety}
+  \begin{enumerate}
+    \item Pacjent zgłasza nasilenie objawów.
+    \item Ośrodek dokumentuje \texttt{AE} i ocenia ciężkość oraz związek.
+    \item Pacjent trafia do szpitala: zdarzenie staje się \texttt{SAE}.
+    \item Zgłoszenie trafia do systemu safety, a potem rozpoczyna się follow-up.
+  \end{enumerate}
+  \begin{QuestionBox}
+    Które informacje muszą być spójne między dokumentacją źródłową, \texttt{EDC} i systemem safety?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec10-monitoring-ai
+\begin{frame}{9--10. Monitor widzi problem, AI wskazuje anomalię}
+  \SlideID{sec10-monitoring-ai}
+  \begin{itemize}
+    \item \texttt{CRA} widzi opóźnienie w follow-up i niespójność między wpisami.
+    \item W \texttt{CTMS} pojawia się temat do monitoringu i issue tracking.
+    \item Moduł \texttt{AI} sygnalizuje nietypowy wzorzec danych w ośrodku.
+    \item To nie jest jeszcze dowód błędu, ale sygnał do sprawdzenia.
+  \end{itemize}
+  \begin{QuestionBox}
+    Jak odróżnić użyteczny alert od fałszywego alarmu?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec10-cleaning-lock
+\begin{frame}{11--12. Data cleaning i database lock}
+  \SlideID{sec10-cleaning-lock}
+  \begin{itemize}
+    \item Zespół domyka \texttt{query}, uzupełnia follow-up i usuwa niespójności.
+    \item Data management sprawdza kompletność oraz gotowość danych.
+    \item Po zamknięciu otwartych problemów baza może zostać zablokowana.
+    \item \texttt{Database lock} to koniec aktywnej edycji i początek analizy końcowej.
+  \end{itemize}
+  \begin{QuestionBox}
+    Czego absolutnie nie chcemy zostawić otwartego przed \texttt{database lock}?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec10-systems-summary
+\begin{frame}{Który system wniósł co do tej historii?}
+  \SlideID{sec10-systems-summary}
+  \begin{itemize}
+    \item \texttt{CTMS}: status ośrodka, monitoring, oversight.
+    \item \texttt{eTMF}: gotowość dokumentacyjna i ślad wersji.
+    \item \texttt{EDC}: dane kliniczne i walidacje.
+    \item \texttt{IWRS}: randomizacja i lek badany.
+    \item \texttt{ePRO}: dane od pacjenta.
+    \item Safety system + \texttt{AI}: bezpieczeństwo, sygnały ryzyka i wsparcie kontroli jakości.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec10-discussion
+\DiscussionFrame{Który moment procesu jest najbardziej krytyczny?}{
+  Gdzie w tej historii najłatwiej o błąd: przy zgodzie, randomizacji, zgłoszeniu \texttt{SAE}, monitoringu, czy przy domykaniu danych? Co jest największym ryzykiem operacyjnym z perspektywy ośrodka, a co z perspektywy sponsora?
+}
+
+% SLIDE ID: sec10-wrap
+\begin{frame}{Najważniejsza myśl z case study}
+  \SlideID{sec10-wrap}
+  \begin{itemize}
+    \item Badanie kliniczne to jeden proces widziany przez wiele systemów.
+    \item Każdy system odpowiada za inny fragment tej samej historii pacjenta.
+    \item Największa wartość pojawia się wtedy, gdy dane, role i odpowiedzialności są spójne od początku do końca.
+  \end{itemize}
+\end{frame}
