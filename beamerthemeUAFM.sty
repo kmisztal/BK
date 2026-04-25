@@ -1,0 +1,107 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeUAFM}[2026/04/25 UAFM beamer theme]
+
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+
+\mode<presentation>
+
+\definecolor{UAFMDarkBlue}{HTML}{003366}
+\definecolor{UAFMAccent}{HTML}{005F8B}
+\definecolor{UAFMLightGray}{HTML}{F5F7FA}
+\definecolor{UAFMText}{HTML}{111111}
+\definecolor{UAFMMuted}{HTML}{666666}
+\definecolor{UAFMAlert}{HTML}{C00000}
+
+\setbeamercolor{normal text}{fg=UAFMText,bg=white}
+\setbeamercolor{structure}{fg=UAFMDarkBlue}
+\setbeamercolor{frametitle}{fg=UAFMText,bg=white}
+\setbeamercolor{title}{fg=UAFMText}
+\setbeamercolor{subtitle}{fg=UAFMMuted}
+\setbeamercolor{author}{fg=UAFMMuted}
+\setbeamercolor{date}{fg=UAFMMuted}
+\setbeamercolor{section in toc}{fg=UAFMDarkBlue}
+\setbeamercolor{item}{fg=UAFMDarkBlue}
+\setbeamercolor{alerted text}{fg=UAFMAlert}
+\setbeamercolor{block title}{fg=white,bg=UAFMDarkBlue}
+\setbeamercolor{block body}{fg=UAFMText,bg=UAFMLightGray}
+
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{footline}{size=\scriptsize}
+\setbeamerfont{block title}{series=\bfseries}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamersize{text margin left=10mm,text margin right=10mm}
+
+\newcommand{\UAFMlogo}{assets/uafm-logo.png}
+\newcommand{\setUAFMlogo}[1]{\renewcommand{\UAFMlogo}{#1}}
+
+\newcommand{\UAFMFooterText}{Kolegium Ksztalcenia Podyplomowego UAFM}
+\newcommand{\setUAFMFooterText}[1]{\renewcommand{\UAFMFooterText}{#1}}
+
+\newcommand{\UAFMTitleCourse}{}
+\newcommand{\setUAFMTitleCourse}[1]{\renewcommand{\UAFMTitleCourse}{#1}}
+
+\newcommand{\UAFMTitleDate}{}
+\newcommand{\setUAFMTitleDate}[1]{\renewcommand{\UAFMTitleDate}{#1}}
+
+\setbeamertemplate{frametitle}{
+  \vspace{0.3cm}
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=10mm,rightskip=10mm]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}
+  \vspace{0.15cm}
+}
+
+\setbeamertemplate{footline}{
+  \leavevmode
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[UAFMDarkBlue] (current page.south west) rectangle ([yshift=10mm]current page.south east);
+    \node[anchor=west,text=white,font=\fontsize{8}{9}\selectfont]
+      at ([xshift=10mm,yshift=5mm]current page.south west) {\UAFMFooterText};
+    \node[anchor=east,text=white,font=\fontsize{8}{9}\selectfont]
+      at ([xshift=-26mm,yshift=5mm]current page.south east) {\insertframenumber};
+    \IfFileExists{\UAFMlogo}{
+      \node[anchor=east] at ([xshift=-6mm,yshift=5mm]current page.south east)
+        {\includegraphics[height=6.2mm]{\UAFMlogo}};
+    }{}
+  \end{tikzpicture}
+  \vspace{7.4mm}
+}
+
+\setbeamertemplate{title page}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[UAFMAccent,line width=0.8pt]
+      ([xshift=15mm,yshift=-43mm]current page.north west) --
+      ([xshift=-15mm,yshift=-43mm]current page.north east);
+  \end{tikzpicture}
+  \vspace*{0.17\paperheight}
+  \begin{center}
+    {\usebeamerfont{title}\inserttitle\par}
+    \vspace{0.55cm}
+    {\usebeamerfont{author}\insertauthor\par}
+    \vspace{0.6cm}
+    {\fontsize{13}{16}\selectfont\bfseries \UAFMTitleCourse\par}
+    \vfill
+    {\usebeamerfont{date}\UAFMTitleDate\par}
+  \end{center}
+}
+
+\AtBeginSection{
+  \begin{frame}[plain]
+    \vfill
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=10mm,rightskip=10mm]{normal text}
+      {\usebeamerfont{frametitle}\insertsection\par}
+      \vspace{0.2cm}
+      {\color{UAFMAccent}\rule{0.45\paperwidth}{1pt}}
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+}
