@@ -1,0 +1,289 @@
+\section{Rynek EDC}
+
+% SLIDE ID: sec02-market-goal
+\BlockGoalFrame{\SlideID{sec02-market-goal}}{
+  \item uporządkować rynek systemów \texttt{EDC} i zobaczyć, że podobne funkcje mogą być osadzone w bardzo różnych modelach biznesowych,
+  \item zrozumieć, czym różnią się platformy enterprise, rozwiązania akademickie i systemy wdrażane szybciej lub lokalnie,
+  \item wiedzieć, na jakie ekrany, logikę pracy i ograniczenia warto patrzeć przy porównywaniu dostawców.
+}
+
+% SLIDE ID: sec02-market-why
+\begin{frame}{Po co znać rynek EDC}
+  \SlideID{sec02-market-why}
+  \begin{itemize}
+    \item Ten sam protokół można wdrożyć w różnych systemach, ale koszt, tempo konfiguracji i ergonomia pracy będą inne.
+    \item Dla sponsora i CRO ważne są skalowalność, walidacja, integracje i standaryzacja procesu.
+    \item Dla ośrodka ważniejsze bywają prostota formularza, szybkość pracy i przejrzysta obsługa query.
+    \item Dla Państwa kluczowe jest nie tyle zapamiętanie nazw firm, ile rozpoznanie, jaki typ platformy najlepiej wspiera dany model badania.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-market-logos-global
+\begin{frame}{Marki globalne, które warto kojarzyć}
+  \SlideID{sec02-market-logos-global}
+  \scriptsize
+  \begin{columns}[T,onlytextwidth]
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \includegraphics[width=0.78\linewidth,height=1.2cm,keepaspectratio]{assets/section02/logo-medidata.png}\par\vspace{0.15cm}
+      \textbf{Medidata Rave}\par
+      \texttt{medidata.com}
+    \end{beamercolorbox}
+    \vspace{0.22cm}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \includegraphics[width=0.78\linewidth,height=1.2cm,keepaspectratio]{assets/section02/logo-veeva.png}\par\vspace{0.15cm}
+      \textbf{Veeva Vault EDC}\par
+      \texttt{veeva.com}
+    \end{beamercolorbox}
+    \vspace{0.22cm}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{\Large Oracle Clinical / InForm}\par\vspace{0.15cm}
+      \texttt{oracle.com}
+    \end{beamercolorbox}
+
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMDarkBlue}{Uwaga praktyczna}}\par\medskip
+      To są marki najczęściej kojarzone z dużymi badaniami sponsorowanymi i globalnymi programami.
+    \end{beamercolorbox}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec02-market-logos-other
+\begin{frame}{Pozostali ważni dostawcy i środowiska}
+  \SlideID{sec02-market-logos-other}
+  \footnotesize
+  \begin{columns}[T,onlytextwidth]
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \includegraphics[width=0.45\linewidth,height=1.2cm,keepaspectratio]{assets/section02/logo-castor.png}\par\vspace{0.15cm}
+      \textbf{Castor EDC}\par
+      \texttt{castoredc.com}
+    \end{beamercolorbox}
+    \vspace{0.22cm}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \textbf{\Large OpenClinica}\par\vspace{0.15cm}
+      \texttt{openclinica.com}
+    \end{beamercolorbox}
+
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \includegraphics[width=0.78\linewidth,height=1.2cm,keepaspectratio]{assets/section02/logo-redcap.png}\par\vspace{0.15cm}
+      \textbf{REDCap}\par
+      \texttt{projectredcap.org}
+    \end{beamercolorbox}
+    \vspace{0.22cm}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \centering
+      \includegraphics[width=0.82\linewidth,height=1.2cm,keepaspectratio]{assets/section02/logo-dicella.png}\par\vspace{0.15cm}
+      \textbf{diCELLa eCRF}\par
+      \texttt{dicella.com}
+    \end{beamercolorbox}
+
+    \column{0.31\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMDarkBlue}{Dlaczego warto je znać}}\par\medskip
+      Pokazują, że rynek \texttt{EDC} nie kończy się na największych platformach enterprise. W dydaktyce są często bardzo użyteczne, bo lepiej pokazują samą logikę formularza, wizyty i rekordu.
+    \end{beamercolorbox}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec02-market-segments
+\begin{frame}{Segmenty rynku EDC}
+  \SlideID{sec02-market-segments}
+  \begin{itemize}
+    \item \textbf{Platformy enterprise}: zwykle wybierane do większych badań wieloośrodkowych, z naciskiem na standaryzację, walidację i integracje z resztą ekosystemu.
+    \item \textbf{Rozwiązania zwinne i mid-market}: atrakcyjne tam, gdzie ważny jest szybszy start, prostsza konfiguracja i mniejszy narzut wdrożeniowy.
+    \item \textbf{Środowisko akademickie}: większe znaczenie mają dostępność, koszt, lokalna administracja i możliwość samodzielnego uruchomienia projektu.
+    \item \textbf{Lokalni dostawcy}: mogą lepiej odpowiadać na specyfikę językową, organizacyjną i operacyjną danego rynku.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \begin{QuestionBox}
+    Czy w praktyce „najlepszy system” istnieje obiektywnie, czy raczej zależy od typu badania, budżetu i dojrzałości organizacji?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec02-market-global
+\begin{frame}{Platformy globalne: co je wyróżnia}
+  \SlideID{sec02-market-global}
+  \footnotesize
+  \begin{columns}[T,onlytextwidth]
+    \column{0.49\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMTeal}{Medidata Rave}}\par\medskip
+      \begin{itemize}
+        \item jedna z najbardziej rozpoznawalnych marek historycznie związanych z \texttt{EDC},
+        \item silna pozycja w dużych badaniach sponsorowanych i projektach globalnych,
+        \item warto pokazać: listę pacjentów, strukturę casebooka, ekran query lub review.
+      \end{itemize}
+      \texttt{www.medidata.com}
+    \end{beamercolorbox}
+
+    \column{0.49\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMOrange}{Veeva Vault EDC}}\par\medskip
+      \begin{itemize}
+        \item budowane jako część szerszego ekosystemu \texttt{Vault},
+        \item mocny nacisk na integrację danych, workflow i jednolity model platformowy,
+        \item warto pokazać: dashboard badania, formularz wizyty i powiązanie z innymi modułami.
+      \end{itemize}
+      \texttt{www.veeva.com}
+    \end{beamercolorbox}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec02-market-oracle
+\begin{frame}{Oracle: rozwiązania ważne historycznie}
+  \SlideID{sec02-market-oracle}
+  \begin{itemize}
+    \item \textbf{Oracle Clinical / RDC Onsite / InForm} to rozwiązania, które przez lata kształtowały sposób myślenia o pracy z \texttt{EDC}.
+    \item Ich interfejs bywa dziś postrzegany jako starszy, ale pojęcia takie jak \texttt{casebook}, review, discrepancy czy audit trail były tam bardzo dobrze widoczne operacyjnie.
+    \item To dobry materiał dydaktyczny, bo pokazuje, że rdzeń procesu pozostaje podobny mimo zmian w wyglądzie interfejsów.
+    \item Warto pokazać: ekran logowania, przegląd pacjentów, drzewo formularzy i ekran pracy z query.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \begin{WarningBox}
+    Historyczny interfejs nie oznacza słabego procesu. Czasem starszy system jest mniej wygodny, ale nadal bardzo jasno pokazuje logikę danych i odpowiedzialności.
+  \end{WarningBox}
+\end{frame}
+
+% SLIDE ID: sec02-market-agile
+\begin{frame}{Systemy zwinne, akademickie i lokalne}
+  \SlideID{sec02-market-agile}
+  \footnotesize
+  \begin{columns}[T,onlytextwidth]
+    \column{0.49\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMTeal}{Castor / OpenClinica}}\par\medskip
+      \begin{itemize}
+        \item często dobrze sprawdzają się tam, gdzie liczy się szybszy start projektu,
+        \item są czytelne dydaktycznie, bo łatwo pokazać w nich strukturę badania i formularzy,
+        \item warto pokazać: builder formularza, ekran wizyty i logikę walidacji.
+      \end{itemize}
+      \texttt{www.castoredc.com}\\
+      \texttt{www.openclinica.com}
+    \end{beamercolorbox}
+
+    \column{0.49\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMOrange}{REDCap / diCELLa}}\par\medskip
+      \begin{itemize}
+        \item \texttt{REDCap} pozostaje bardzo ważnym punktem odniesienia w badaniach akademickich i rejestrach,
+        \item \texttt{diCELLa} pokazuje lokalny kierunek rozwoju systemów \texttt{eClinical}, bliższych praktyce regionalnej,
+        \item warto pokazać: projekt formularza, widok rekordu i ekran użytkownika końcowego.
+      \end{itemize}
+      \texttt{www.projectredcap.org}\\
+      \texttt{www.dicella.com}
+    \end{beamercolorbox}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec02-market-screens
+\begin{frame}{Jakie screenshoty warto pokazać}
+  \SlideID{sec02-market-screens}
+  \begin{itemize}
+    \item \textbf{Medidata Rave}: lista pacjentów, casebook, ekran query, ekran audit trail lub review.
+    \item \textbf{Veeva Vault EDC}: dashboard badania, widok formularza wizyty, przykład workflow lub integracji z ekosystemem.
+    \item \textbf{Oracle}: historyczny login, strona główna, drzewo \texttt{CRF} i przegląd discrepancy.
+    \item \textbf{Castor / OpenClinica}: projekt formularza, konfiguracja walidacji, widok badania z perspektywy użytkownika.
+    \item \textbf{REDCap}: formularz projektu, record status dashboard, matrix formularzy lub prawa użytkowników.
+    \item \textbf{diCELLa}: ekran główny systemu, karta pacjenta, struktura wizyt i formularzy, a jeśli to możliwe także widok query lub raportów.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-market-comparison-enterprise
+\begin{frame}{Porównanie: platformy enterprise}
+  \SlideID{sec02-market-comparison-enterprise}
+  \scriptsize
+  \begin{tabular}{p{2.1cm} p{2.4cm} p{2.9cm} p{2.8cm}}
+    \textbf{System} & \textbf{Typowe użycie} & \textbf{Mocne strony} & \textbf{Na co uważać} \\
+    \hline
+    Medidata Rave & globalne badania sponsorowane & skala, integracje, procesy enterprise & złożoność i koszt wdrożenia \\
+    \hline
+    Veeva Vault EDC & sponsor / CRO w ekosystemie \texttt{Vault} & spójna platforma, workflow, dane między modułami & silne związanie z jednym ekosystemem \\
+    \hline
+    Oracle InForm / RDC & klasyczne środowiska operacyjne, duże badania & stabilność, czytelna logika procesu, znaczenie historyczne & starszy interfejs i mniej nowoczesny UX \\
+  \end{tabular}
+\end{frame}
+
+% SLIDE ID: sec02-market-comparison-agile
+\begin{frame}{Porównanie: systemy zwinne, akademickie i lokalne}
+  \SlideID{sec02-market-comparison-agile}
+  \scriptsize
+  \begin{tabular}{p{2.0cm} p{2.6cm} p{2.8cm} p{2.8cm}}
+    \textbf{System} & \textbf{Typowe użycie} & \textbf{Mocne strony} & \textbf{Na co uważać} \\
+    \hline
+    Castor EDC & mniejsze badania, szybkie uruchomienie & prostsze wdrożenie, przejrzystość, krótsza droga do startu & mniejsza głębokość funkcji enterprise \\
+    \hline
+    OpenClinica & akademia, CRO, projekty elastyczne & rozpoznawalność, elastyczność, konfiguracja & zależność od modelu wdrożenia i administracji \\
+    \hline
+    REDCap & badania akademickie, rejestry, projekty lokalne & dostępność, prostota, popularność akademicka & nie zawsze odpowiada klasycznemu \texttt{EDC} rejestracyjnemu \\
+    \hline
+    diCELLa eCRF & projekty lokalne i wdrożenia dopasowane do klienta & elastyczność, regionalne dopasowanie, szerszy kontekst \texttt{eClinical} & mniejsza rozpoznawalność globalna niż u największych dostawców \\
+  \end{tabular}
+\end{frame}
+
+% SLIDE ID: sec02-market-selection
+\begin{frame}{Jak w praktyce wybiera się EDC}
+  \SlideID{sec02-market-selection}
+  \begin{itemize}
+    \item Czy badanie jest globalne, wieloośrodkowe i obudowane wieloma procesami sponsora?
+    \item Czy trzeba szybko uruchomić projekt, a najważniejsza jest prostota pracy ośrodka?
+    \item Czy organizacja potrzebuje pełnego ekosystemu \texttt{CTMS / eTMF / randomization / safety}, czy głównie dobrego formularza i kontroli danych?
+    \item Czy kluczowe są lokalne wsparcie, język, szybkość konfiguracji i koszt utrzymania?
+    \item Czy użytkownicy końcowi będą zaawansowani, czy trzeba projektować interfejs pod osoby, które z systemem pracują okazjonalnie?
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-market-trends
+\begin{frame}{W jaką stronę idzie rynek}
+  \SlideID{sec02-market-trends}
+  \begin{itemize}
+    \item \textbf{Platformizacja}: \texttt{EDC} coraz rzadziej jest samotnym systemem, częściej staje się częścią większego środowiska \texttt{eClinical}.
+    \item \textbf{Integracje}: rośnie znaczenie \texttt{API}, połączeń z \texttt{ePRO}, \texttt{eSource}, safety i narzędziami analitycznymi.
+    \item \textbf{UX}: użytkownik ośrodka oczekuje prostszego interfejsu i mniejszej liczby kroków.
+    \item \textbf{Automatyzacja}: systemy coraz częściej wspierają query, cleaning i monitoring sygnałami opartymi na regułach lub \texttt{AI}.
+    \item \textbf{Gotowość regulacyjna}: sam nowoczesny wygląd nie wystarcza; nadal trzeba zapewnić walidację, ślad zmian i kontrolę dostępu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-market-discussion
+\DiscussionFrame{Czy rynek EDC naprawdę bardzo się różni?}{
+  Jeśli spojrzymy na rdzeń procesu, większość systemów oferuje podobne elementy: formularze, walidacje, query, role i audit trail. Różnice stają się wyraźne dopiero wtedy, gdy oceniamy ergonomię pracy, tempo wdrożenia, integracje, model wsparcia i dojrzałość całego ekosystemu.
+}
+
+% SLIDE ID: sec02-market-summary
+\begin{frame}{Wniosek z przeglądu rynku}
+  \SlideID{sec02-market-summary}
+  \begin{itemize}
+    \item Rynek \texttt{EDC} jest dojrzały, ale bardzo zróżnicowany pod względem modelu użycia i otoczenia organizacyjnego.
+    \item Największe platformy wygrywają skalą i ekosystemem, a mniejsze lub lokalne rozwiązania często wygrywają prostotą i szybkością wdrożenia.
+    \item Z perspektywy użytkownika końcowego warto porównywać nie tylko listę funkcji, ale też logikę pracy na ekranie.
+    \item Dobra demonstracja systemu powinna pokazać nie marketing, ale realny przepływ: pacjent, wizyta, formularz, walidacja, query i ślad zmian.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-market-sources
+\begin{frame}{Źródła i strony WWW}
+  \SlideID{sec02-market-sources}
+  \footnotesize
+  \begin{itemize}
+    \item Medidata: \texttt{https://www.medidata.com/}
+    \item Veeva Vault EDC: \texttt{https://www.veeva.com/}
+    \item Oracle Health Sciences / InForm / RDC documentation: \texttt{https://www.oracle.com/industries/life-sciences/}
+    \item Castor EDC: \texttt{https://www.castoredc.com/}
+    \item OpenClinica: \texttt{https://www.openclinica.com/}
+    \item REDCap: \texttt{https://projectredcap.org/} oraz portal Yale: \texttt{https://portal.redcap.yale.edu/}
+    \item diCELLa: \texttt{https://dicella.com/}
+  \end{itemize}
+\end{frame}

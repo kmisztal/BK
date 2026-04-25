@@ -1,0 +1,222 @@
+\section{Regulacje i wymagania dla systemów eClinical}
+
+% SLIDE ID: reg-systems-goal
+\BlockGoalFrame{\SlideID{reg-systems-goal}}{
+  \item zobaczyć, jakie wymagania dotyczą systemów eClinical,
+  \item połączyć regulacje z praktycznymi funkcjami systemu,
+  \item zrozumieć, że zgodność to proces, nie tylko funkcja w aplikacji.
+}
+
+% SLIDE ID: reg-main-sources
+\begin{frame}{Główne źródła wymagań}
+  \SlideID{reg-main-sources}
+  \begin{itemize}
+    \item ICH E6(R3) Good Clinical Practice,
+    \item EMA guideline on computerised systems and electronic data,
+    \item FDA 21 CFR Part 11 i guidance 2024,
+    \item EU Clinical Trials Regulation 536/2014,
+    \item lokalne SOP, umowy i walidacja systemu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: reg-system-scope
+\begin{frame}{Jakie systemy obejmują wymagania}
+  \SlideID{reg-system-scope}
+  \begin{itemize}
+    \item EDC i eCRF,
+    \item IVRS / IWRS / IRT,
+    \item eTMF i repozytoria dokumentów,
+    \item CTMS i systemy monitoringu,
+    \item ePRO, eCOA, aplikacje pacjenta i urządzenia.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{ExampleBox}
+    Regulator patrzy nie tylko na aplikację, ale na cały cykl życia danych: od wpisu do archiwizacji.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: reg-core-principles
+\begin{frame}{Wspólne wymagania}
+  \SlideID{reg-core-principles}
+  \begin{itemize}
+    \item system powinien być zwalidowany proporcjonalnie do ryzyka,
+    \item dostęp musi być kontrolowany i przypisany do osoby,
+    \item dane muszą być kompletne, czytelne, dostępne i chronione,
+    \item zmiany powinny być widoczne w audit trail,
+    \item procedury muszą opisywać użycie, backup, awarie i archiwizację.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: reg-data-integrity
+\begin{frame}{Integralność danych}
+  \SlideID{reg-data-integrity}
+  \begin{itemize}
+    \item dane muszą być przypisywalne do użytkownika,
+    \item wpis powinien być rejestrowany w czasie zdarzenia,
+    \item oryginalne dane i metadane muszą pozostać dostępne,
+    \item system nie może pozwalać na niewidoczne zmiany „od tyłu”.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{QuestionBox}
+    Czy screenshot z systemu jest wystarczającym dowodem danych?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: reg-edc-ecrf
+\begin{frame}{EDC / eCRF}
+  \SlideID{reg-edc-ecrf}
+  \begin{itemize}
+    \item formularze powinny zbierać dane wymagane protokołem,
+    \item walidacje i edit checks wspierają kompletność danych,
+    \item query musi zostawiać ślad decyzji i odpowiedzi,
+    \item audit trail powinien pokazywać kto, kiedy i co zmienił.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{ExampleBox}
+    Dobre eCRF nie zbiera „wszystkiego”, tylko dane potrzebne do oceny bezpieczeństwa i punktów końcowych.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: reg-ivrs-iwrs
+\begin{frame}{IVRS / IWRS / IRT}
+  \SlideID{reg-ivrs-iwrs}
+  \begin{itemize}
+    \item randomizacja musi być możliwa do odtworzenia,
+    \item zaślepienie musi być chronione technicznie i proceduralnie,
+    \item dostęp do unblindingu powinien być ograniczony,
+    \item przypisanie leku musi być spójne z protokołem i zapasami.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{WarningBox}
+    Największe ryzyko: błąd systemu lub użytkownika, który narusza randomizację albo zaślepienie.
+  \end{WarningBox}
+\end{frame}
+
+% SLIDE ID: reg-etmf
+\begin{frame}{eTMF}
+  \SlideID{reg-etmf}
+  \begin{itemize}
+    \item TMF musi umożliwiać ocenę przebiegu badania,
+    \item dokumenty powinny być kompletne, aktualne i dostępne,
+    \item wersje, podpisy i daty muszą być kontrolowane,
+    \item archiwizacja musi zachować czytelność i dostępność przez wymagany okres.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{QuestionBox}
+    Czy eTMF to tylko „dysk na dokumenty”, czy system kontroli badania?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: reg-ctms
+\begin{frame}{CTMS}
+  \SlideID{reg-ctms}
+  \begin{itemize}
+    \item CTMS wspiera nadzór nad badaniem i ośrodkami,
+    \item statusy i KPI powinny być spójne z rzeczywistością,
+    \item działania monitorujące muszą być dokumentowane,
+    \item integracje z EDC i eTMF powinny być opisane i kontrolowane.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{ExampleBox}
+    Jeśli CTMS pokazuje „site active”, system powinien wspierać dowód, że wymagane kroki aktywacji naprawdę wykonano.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: reg-epro
+\begin{frame}{ePRO / eCOA}
+  \SlideID{reg-epro}
+  \begin{itemize}
+    \item dane pacjenta muszą być przypisane do właściwej osoby,
+    \item czas wpisu i czas obserwacji mają znaczenie,
+    \item aplikacja powinna ograniczać brakujące i opóźnione wpisy,
+    \item zgłoszenie istotnego objawu może wymagać alertu do zespołu badania.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{WarningBox}
+    Pacjent zgłasza duszność w dzienniczku. System nie powinien być tylko „notatnikiem”.
+  \end{WarningBox}
+\end{frame}
+
+% SLIDE ID: reg-vendor-saas
+\begin{frame}{Vendor i SaaS}
+  \SlideID{reg-vendor-saas}
+  \begin{itemize}
+    \item odpowiedzialność nie znika po wyborze dostawcy,
+    \item umowa powinna opisywać role, dane, dostęp i dokumentację,
+    \item konfiguracja produkcyjna musi być znana i kontrolowana,
+    \item zmiany, aktualizacje i incydenty wymagają procesu.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{WarningBox}
+    „System jest w chmurze” nie oznacza automatycznie, że jest zgodny z GCP.
+  \end{WarningBox}
+\end{frame}
+
+% SLIDE ID: reg-ai-note
+\begin{frame}{AI w systemach badania}
+  \SlideID{reg-ai-note}
+  \begin{itemize}
+    \item AI może wspierać rekrutację, coding, query i monitoring,
+    \item wynik AI musi być możliwy do oceny przez człowieka,
+    \item trzeba kontrolować bias, jakość danych i zmianę modelu,
+    \item odpowiedzialność za decyzję pozostaje po stronie ludzi i organizacji.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{QuestionBox}
+    Kiedy sugestia AI staje się decyzją kliniczną albo operacyjną?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: reg-practical-checklist
+\begin{frame}{Checklist dla systemu}
+  \SlideID{reg-practical-checklist}
+  \begin{itemize}
+    \item Czy wiemy, jakie dane są źródłowe?
+    \item Czy każdy użytkownik ma indywidualne konto?
+    \item Czy audit trail jest dostępny i czytelny?
+    \item Czy mamy backup, archiwizację i plan awaryjny?
+    \item Czy system i konfiguracja są zwalidowane?
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: reg-summary
+\begin{frame}{Najważniejszy wniosek}
+  \SlideID{reg-summary}
+  \begin{itemize}
+    \item regulacje nie wymagają „jednego idealnego systemu”,
+    \item wymagają kontroli nad ryzykiem, danymi i procesem,
+    \item funkcja w aplikacji musi być wsparta SOP, walidacją i szkoleniem,
+    \item im większy wpływ na pacjenta i wyniki, tym większy poziom kontroli.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: reg-sources
+\begin{frame}{Źródła}
+  \SlideID{reg-sources}
+  \footnotesize
+  \begin{itemize}
+    \item ICH E6(R3), \textit{Good Clinical Practice}, final guideline, 2025.
+    \item EMA, \textit{Guideline on computerised systems and electronic data in clinical trials}, EMA/INS/GCP/112288/2023.
+    \item FDA, \textit{Electronic Systems, Electronic Records, and Electronic Signatures in Clinical Investigations: Questions and Answers}, 2024.
+    \item Regulation (EU) No 536/2014 on clinical trials on medicinal products for human use.
+    \item EMA, \textit{ICH E6 Good Clinical Practice — Scientific guideline}.
+  \end{itemize}
+\end{frame}

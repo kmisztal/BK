@@ -14,7 +14,7 @@
     EDC to system informatyczny, w którym zbierane, kontrolowane i porządkowane są dane z badania klinicznego.
   \end{DefinitionBox}
 
-  \vspace{0.35cm}
+  \vspace{0.15cm}
 
   \begin{itemize}
     \item przechowuje dane pacjentów i wizyt,
@@ -26,11 +26,51 @@
 % SLIDE ID: sec02-ecrf-definition
 \begin{frame}{Czym jest eCRF}
   \SlideID{sec02-ecrf-definition}
+  \begin{DefinitionBox}
+    eCRF to elektroniczny formularz, który zbiera konkretne dane wymagane przez protokół badania.
+  \end{DefinitionBox}
+
+  \vspace{0.35cm}
+
   \begin{itemize}
-    \item eCRF to elektroniczny formularz używany do wpisywania danych,
-    \item jest częścią systemu EDC,
-    \item odwzorowuje logikę protokołu: wizyty, procedury i pola danych.
+    \item jest elementem systemu EDC,
+    \item porządkuje dane według wizyt, formularzy i pól,
+    \item przekłada protokół na praktyczne wpisy użytkownika.
   \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-edc-vs-ecrf
+\begin{frame}{EDC vs eCRF}
+  \SlideID{sec02-edc-vs-ecrf}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMTeal}{EDC}} \par\medskip
+      \begin{itemize}
+        \item cały system zbierania danych,
+        \item użytkownicy, role i uprawnienia,
+        \item walidacje, query, audit trail,
+        \item baza danych i eksporty.
+      \end{itemize}
+    \end{beamercolorbox}
+
+    \column{0.48\textwidth}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+      \textbf{\textcolor{UAFMOrange}{eCRF}} \par\medskip
+      \begin{itemize}
+        \item formularz w systemie EDC,
+        \item pola danych dla wizyty,
+        \item logika protokołu,
+        \item miejsce wpisu użytkownika.
+      \end{itemize}
+    \end{beamercolorbox}
+  \end{columns}
+
+  \vspace{0.35cm}
+
+  \begin{ExampleBox}
+    EDC to całe środowisko pracy, a eCRF to formularz działający wewnątrz tego środowiska.
+  \end{ExampleBox}
 \end{frame}
 
 % SLIDE ID: sec02-paper-vs-electronic
@@ -58,6 +98,86 @@
     \end{beamercolorbox}
   \end{columns}
 \end{frame}
+
+% SLIDE ID: sec02-paper-crf-history
+\begin{frame}{Zanim był eCRF}
+  \SlideID{sec02-paper-crf-history}
+  \begin{itemize}
+    \item dane zbierano w papierowych CRF,
+    \item formularz był projektowany pod protokół,
+    \item wpisy trafiały później do bazy przez data entry,
+    \item kontrola jakości następowała z opóźnieniem.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{QuestionBox}
+    Co mogło pójść źle, jeśli błąd odkrywano kilka tygodni po wizycie pacjenta?
+  \end{QuestionBox}
+\end{frame}
+
+% SLIDE ID: sec02-paper-copying
+\begin{frame}{Jak radzono sobie z kopiami}
+  \SlideID{sec02-paper-copying}
+  \begin{itemize}
+    \item stosowano wielowarstwowe formularze,
+    \item kopie powstawały przez papier samokopiujący,
+    \item komplet dokumentów trafiał do sponsora, CRO lub archiwum,
+    \item ryzykiem były braki stron, nieczytelność i rozbieżne wersje.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{ExampleBox}
+    NCR / carbonless copy paper pozwalał tworzyć kopie CRF bez ręcznego przepisywania.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: sec02-paper-still-exists
+\begin{frame}{Papierowy CRF nie zniknął całkowicie}
+  \SlideID{sec02-paper-still-exists}
+  \begin{itemize}
+    \item Papier nie jest dziś głównym modelem badań rejestracyjnych, ale nadal pojawia się w wybranych projektach.
+    \item Dotyczy to zwłaszcza badań akademickich, badań terenowych i modeli hybrydowych opartych na skanowaniu formularzy.
+    \item Nadal istnieją firmy oferujące projektowanie, druk i obsługę papierowych lub hybrydowych formularzy \texttt{CRF}.
+    \item W praktyce papier częściej bywa etapem przejściowym niż docelowym modelem zarządzania danymi.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{ExampleBox}
+    Przykłady: eClinical / ePartner Consulting oraz GSB Clinical.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: sec02-paper-vendors
+\begin{frame}{Kto nadal pracuje z papierowym CRF}
+  \SlideID{sec02-paper-vendors}
+  \begin{itemize}
+    \item \textbf{eClinical / ePartner Consulting}: publicznie pokazuje ofertę projektowania zarówno papierowych, jak i elektronicznych \texttt{CRF}, wraz z logiką formularzy i przygotowaniem układu pod protokół.
+    \item \textbf{GSB Clinical}: komunikuje usługi związane z projektowaniem, drukiem i logistyką papierowych materiałów badaniowych, w tym formularzy i dokumentów operacyjnych.
+    \item Tego typu oferty nie oznaczają powrotu do dominacji papieru, ale pokazują, że w realnych badaniach nadal istnieją procesy hybrydowe.
+    \item Dla Państwa to ważny sygnał praktyczny: nawet nowoczesny ekosystem \texttt{eClinical} czasem musi stykać się z dokumentacją papierową.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-paper-data-flow
+\begin{frame}{Papierowy przepływ danych}
+  \SlideID{sec02-paper-data-flow}
+  \begin{center}
+    \Large
+    Pacjent $\rightarrow$ papierowy CRF $\rightarrow$ monitoring $\rightarrow$ data entry $\rightarrow$ query $\rightarrow$ korekta
+  \end{center}
+
+  \vspace{0.45cm}
+
+  \begin{itemize}
+    \item dużo pracy było wykonywane po fakcie,
+    \item jakość zależała od czytelności i kompletności papieru,
+    \item query często wracało do ośrodka z dużym opóźnieniem.
+  \end{itemize}
+\end{frame}
+
 
 % SLIDE ID: sec02-study-structure
 \begin{frame}{Struktura badania w EDC}
@@ -113,6 +233,96 @@
   \end{ExampleBox}
 \end{frame}
 
+% SLIDE ID: sec02-edc-history-milestones
+\begin{frame}{Kamienie milowe EDC}
+  \SlideID{sec02-edc-history-milestones}
+  \begin{itemize}
+    \item lata 90.: przejście od papieru do systemów komputerowych,
+    \item 1997: 21 CFR Part 11 wzmacnia wymagania dla zapisów elektronicznych,
+    \item koniec lat 90. / początek 2000.: rozwój dużych platform EDC,
+    \item lata 2010+: integracje, chmura, eSource, ePRO i risk-based monitoring.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-early-edc-login
+\begin{frame}{Historyczny ekran EDC: logowanie do Oracle RDC}
+  \SlideID{sec02-early-edc-login}
+  \small
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+    \includegraphics[width=\linewidth,height=0.56\textheight,keepaspectratio]{assets/section02/oracle-preview-b-023.png}
+
+    \column{0.46\textwidth}
+    \begin{itemize}
+      \item To oficjalny screen z dokumentacji \texttt{Oracle RDC Onsite}.
+      \item Pokazuje estetykę wczesnych systemów: prosty ekran, nacisk na funkcję i bezpieczeństwo dostępu.
+      \item Widać, że \texttt{EDC} było wtedy bardziej narzędziem operacyjnym niż produktem projektowanym pod wygodę użytkownika.
+      \item Dla ośrodka priorytet był prosty: wejść do systemu, znaleźć pacjenta i wpisać dane poprawnie.
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec02-early-edc-home
+\begin{frame}{Historyczny ekran EDC: strona główna i casebook}
+  \SlideID{sec02-early-edc-home}
+  \small
+  \begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \includegraphics[width=\linewidth,height=0.56\textheight,keepaspectratio]{assets/section02/oracle-preview-c-024.png}
+
+    \column{0.44\textwidth}
+    \begin{itemize}
+      \item Strona główna pokazuje kluczowe elementy pracy: pacjentów, zakładki, przegląd \texttt{CRF} i ścieżkę do review.
+      \item Wczesne systemy były bardzo tabelaryczne i mocno przypominały operacyjne aplikacje korporacyjne.
+      \item Ten screen dobrze tłumaczy, skąd wzięły się pojęcia \texttt{casebook}, \texttt{review}, \texttt{discrepancy} i \texttt{SDV}.
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec02-modern-edc-visual
+\begin{frame}{Współczesny EDC: nacisk na prostotę i wdrożenie}
+  \SlideID{sec02-modern-edc-visual}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \includegraphics[width=\linewidth]{assets/section02/openclinica-edc-modern.jpg}
+
+    \column{0.48\textwidth}
+    \begin{itemize}
+      \item Dzisiejsze platformy mocniej akcentują szybkość wdrożenia, łatwość konfiguracji i mniejsze obciążenie ośrodka.
+      \item W materiałach \texttt{OpenClinica} widać język typowy dla współczesnego rynku: mniej o samym formularzu, więcej o jakości danych, integracjach i doświadczeniu użytkownika.
+      \item To dobra ilustracja zmiany myślenia: z systemu „do wpisywania danych” do platformy wspierającej cały przepływ pracy.
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+% SLIDE ID: sec02-market-context
+\begin{frame}{Kilka nazw, które warto znać}
+  \SlideID{sec02-market-context}
+  \begin{itemize}
+    \item \textbf{Medidata Rave}: jeden z najlepiej rozpoznawalnych systemów \texttt{EDC}; firma podaje, że \texttt{Rave} uruchomiono w 1999 roku.
+    \item \textbf{Oracle InForm / RDC Onsite}: ważne historycznie rozwiązania pokazujące, jak rozwijał się model pracy z \texttt{eCRF}, query i review.
+    \item \textbf{OpenClinica}, \textbf{Castor}, \textbf{REDCap}: rozwiązania częściej spotykane w mniejszych badaniach, środowisku akademickim albo projektach wymagających większej prostoty.
+    \item Sama lista dostawców nie jest najważniejsza; ważniejsze jest zrozumienie, że większość systemów realizuje podobny rdzeń procesu, ale różni się ergonomią, zakresem integracji i dojrzałością operacyjną.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-why-edc-won
+\begin{frame}{Dlaczego EDC wygrało}
+  \SlideID{sec02-why-edc-won}
+  \begin{itemize}
+    \item walidacje działają wcześniej niż w papierze,
+    \item monitor widzi dane szybciej,
+    \item query można obsłużyć bez obiegu papieru,
+    \item audit trail pokazuje pełną historię zmian.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{QuestionBox}
+    Czy EDC usuwa błędy, czy tylko przesuwa je bliżej momentu wpisu?
+  \end{QuestionBox}
+\end{frame}
+
 % SLIDE ID: sec02-query-management
 \begin{frame}{Query management}
   \SlideID{sec02-query-management}
@@ -131,6 +341,23 @@
     \item widać wartość pierwotną i wartość po zmianie,
     \item to kluczowe dla zgodności i wiarygodności danych.
   \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-electronic-records
+\begin{frame}{Co zmienił zapis elektroniczny}
+  \SlideID{sec02-electronic-records}
+  \begin{itemize}
+    \item dane stały się łatwiejsze do śledzenia,
+    \item podpis i zmiana muszą być przypisane do użytkownika,
+    \item system musi chronić integralność rekordu,
+    \item zgodność zależy od technologii i procedur.
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{ExampleBox}
+    Sam fakt, że dane są elektroniczne, nie wystarcza. System musi być kontrolowany, walidowany i używany zgodnie z procedurami.
+  \end{ExampleBox}
 \end{frame}
 
 % SLIDE ID: sec02-roles
@@ -199,6 +426,23 @@
     \item pominięcie pola obowiązkowego,
     \item brak reakcji na query,
     \item poprawa danych bez zrozumienia źródła problemu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-sources
+\begin{frame}{Źródła do tej sekcji}
+  \SlideID{sec02-sources}
+  \begin{itemize}
+    \item Bellary S. et al., \textit{Basics of case report form designing in clinical research}, 2014.
+    \item FDA, \textit{21 CFR Part 11 — Electronic Records; Electronic Signatures}.
+    \item FDA, \textit{Electronic Systems, Electronic Records, and Electronic Signatures in Clinical Investigations}, 2024.
+    \item ICH, \textit{E6 Good Clinical Practice}.
+    \item Medidata, \textit{History of Clinical Research: From Paper to Digital}.
+    \item INA-RESPOND, \textit{Design and Development of Case Report Forms}.
+    \item eClinical / ePartner Consulting, \textit{Electronic and paper CRF design in clinical trials}.
+    \item OpenClinica, \textit{Electronic Data Capture (EDC)}.
+    \item Oracle, \textit{Oracle Clinical Remote Data Capture Onsite User's Guide}.
+    \item GSB Clinical, \textit{CRF clinical trial}.
   \end{itemize}
 \end{frame}
 
