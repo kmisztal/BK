@@ -35,6 +35,7 @@
 \setbeamercolor{itemize item}{fg=UAFMAccent}
 \setbeamercolor{itemize subitem}{fg=UAFMTeal}
 \setbeamercolor{enumerate item}{fg=UAFMAccent}
+\setbeamercolor{footline}{fg=white,bg=UAFMDarkBlue}
 
 \setbeamerfont{title}{size=\LARGE,series=\bfseries}
 \setbeamerfont{subtitle}{size=\normalsize}
@@ -53,7 +54,7 @@
 \newcommand{\UAFMlogo}{assets/uafm-logo.png}
 \newcommand{\setUAFMlogo}[1]{\renewcommand{\UAFMlogo}{#1}}
 
-\newcommand{\UAFMFooterText}{Kolegium Ksztalcenia Podyplomowego UAFM}
+\newcommand{\UAFMFooterText}{Kolegium Kształcenia Podyplomowego UAFM}
 \newcommand{\setUAFMFooterText}[1]{\renewcommand{\UAFMFooterText}{#1}}
 
 \newcommand{\UAFMTitleCourse}{}
@@ -73,18 +74,21 @@
 
 \setbeamertemplate{footline}{
   \leavevmode
-  \begin{tikzpicture}[remember picture,overlay]
-    \fill[UAFMDarkBlue] (current page.south west) rectangle ([yshift=10mm]current page.south east);
-    \node[anchor=west,text=white,font=\fontsize{8}{9}\selectfont]
-      at ([xshift=10mm,yshift=5mm]current page.south west) {\UAFMFooterText};
-    \node[anchor=east,text=white,font=\fontsize{8}{9}\selectfont]
-      at ([xshift=-26mm,yshift=5mm]current page.south east) {\insertframenumber};
-    \IfFileExists{\UAFMlogo}{
-      \node[anchor=east] at ([xshift=-6mm,yshift=5mm]current page.south east)
-        {\includegraphics[height=6.2mm]{\UAFMlogo}};
-    }{}
-  \end{tikzpicture}
-  \vspace{7.4mm}
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=10mm,dp=0mm]{footline}
+      \begin{tikzpicture}[remember picture,overlay]
+        \fill[UAFMDarkBlue] (current page.south west) rectangle ([yshift=10mm]current page.south east);
+        \node[anchor=west,text=white,font=\fontsize{8}{9}\selectfont]
+          at ([xshift=10mm,yshift=5mm]current page.south west) {\UAFMFooterText};
+        \node[anchor=east,text=white,font=\fontsize{8}{9}\selectfont]
+          at ([xshift=-26mm,yshift=5mm]current page.south east) {\insertframenumber/\inserttotalframenumber};
+        \IfFileExists{\UAFMlogo}{
+          \node[anchor=east] at ([xshift=-6mm,yshift=5mm]current page.south east)
+            {\includegraphics[height=6.2mm]{\UAFMlogo}};
+        }{}
+      \end{tikzpicture}
+    \end{beamercolorbox}%
+  }
 }
 
 \setbeamertemplate{title page}{
@@ -106,7 +110,7 @@
 }
 
 \AtBeginSection{
-  \begin{frame}[plain]
+  \begin{frame}
     \vfill
     \begin{beamercolorbox}[wd=\paperwidth,leftskip=10mm,rightskip=10mm]{normal text}
       {\usebeamerfont{frametitle}\insertsection\par}
