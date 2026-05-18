@@ -33,6 +33,78 @@
   \end{itemize}
 \end{frame}
 
+% SLIDE ID: sec04-history-overview
+\begin{frame}{Historia rozwoju ePRO}
+  \SlideID{sec04-history-overview}
+  \begin{center}
+    \Large
+    Wczesne systemy elektroniczne $\rightarrow$ telefoniczne \texttt{IVRS} $\rightarrow$ urządzenia dedykowane $\rightarrow$ \texttt{BYOD} i badania zdecentralizowane
+  \end{center}
+
+  \vspace{0.45cm}
+
+  \begin{itemize}
+    \item Historia \texttt{ePRO} to przejście od papierowych dzienniczków, które łatwo było uzupełniać po fakcie, do danych zgłaszanych bliżej rzeczywistego momentu objawu.
+    \item Najważniejsza zmiana nie dotyczyła tylko nośnika, ale wiarygodności czasu wpisu, ograniczenia recall bias i większej ciągłości obserwacji pacjenta.
+    \item Z czasem \texttt{ePRO} przestało być dodatkiem do badania i zaczęło pełnić rolę ważnego źródła danych klinicznych oraz operacyjnych.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-history-early-computing
+\begin{frame}{1. Wczesne systemy elektroniczne: lata 80. i 90.}
+  \SlideID{sec04-history-early-computing}
+  \begin{itemize}
+    \item Już w latach 80. i 90. badacze sprawdzali, czy papierowe dzienniczki można zastąpić prostymi systemami elektronicznymi.
+    \item Były to często rozwiązania cięższe technologicznie niż dziś: proste terminale, ekrany komputerowe lub dedykowane stanowiska zbierania danych.
+    \item Początkowo obawiano się, że starsi pacjenci lub osoby mniej techniczne będą odrzucać taki model pracy, ale pilotaże często pokazywały dobrą akceptację.
+    \item To był pierwszy krok do myślenia, że pacjent może raportować dane bezpośrednio do systemu, a nie tylko do papierowego formularza oddawanego na wizycie.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-history-ivrs
+\begin{frame}{2. Telefoniczne ePRO i IVRS: koniec lat 90. i lata 2000}
+  \SlideID{sec04-history-ivrs}
+  \begin{itemize}
+    \item Zanim smartfony i aplikacje stały się powszechne, ważną rolę odegrały systemy \texttt{IVRS}, w których pacjent dzwonił na numer i odpowiadał na pytania z klawiatury telefonu.
+    \item Taki model ograniczał klasyczne \texttt{back-filling}, czyli uzupełnianie kilku dni dzienniczka tuż przed wizytą kontrolną.
+    \item Dzięki znacznikom czasu dane były bliższe rzeczywistemu momentowi zdarzenia, co zmniejszało ryzyko zniekształceń pamięciowych.
+    \item \texttt{IVRS} pokazał też, że raportowanie pacjenta może działać poza ośrodkiem i nie musi wymagać stałego kontaktu z personelem badania.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-history-handheld
+\begin{frame}{3. Dedykowane urządzenia handheld: lata 2000 i 2010}
+  \SlideID{sec04-history-handheld}
+  \begin{itemize}
+    \item W kolejnej fazie sponsorzy zaczęli przekazywać pacjentom dedykowane urządzenia lub \texttt{PDA}, używane wyłącznie do dzienniczków objawów i kwestionariuszy jakości życia.
+    \item Ten model dawał większą kontrolę nad wersją oprogramowania, konfiguracją pytań, przypomnieniami i bezpieczeństwem danych.
+    \item Jednocześnie oznaczał większy narzut logistyczny: urządzenia trzeba było przygotować, dystrybuować, szkolić pacjentów i serwisować.
+    \item W tym okresie \texttt{ePRO} umocniło się jako poważne narzędzie zbierania danych, a nie eksperyment technologiczny.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-history-modern
+\begin{frame}{4. BYOD, pandemia i model zdalny: lata 2020 do dziś}
+  \SlideID{sec04-history-modern}
+  \begin{itemize}
+    \item Współczesny rynek mocno przesunął się w stronę \texttt{BYOD} (\texttt{Bring Your Own Device}), czyli użycia własnego telefonu pacjenta lub bezpiecznego portalu webowego.
+    \item W czasie pandemii rozwiązania zdalne stały się kluczowe dla utrzymania ciągłości badań i rozwoju modeli hybrydowych oraz zdecentralizowanych.
+    \item Nowoczesne platformy \texttt{ePRO} integrują przypomnienia, alerty, monitoring compliance, czasem także wearables i inne elementy \texttt{eCOA}.
+    \item W praktyce \texttt{ePRO} stało się jednym z filarów patient-centric trial design: mniej wizyt tylko po to, by „przepisać” objawy, więcej bieżącej obserwacji między wizytami.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec04-history-clinical-value
+\begin{frame}{Kamień milowy: kiedy ePRO pokazało wartość kliniczną}
+  \SlideID{sec04-history-clinical-value}
+  \begin{itemize}
+    \item Ważnym momentem była praca zespołu \texttt{Ethan Basch} opublikowana w \texttt{Journal of Clinical Oncology} w 2016 r.
+    \item W badaniu pacjenci onkologiczni raportowali objawy przez portal webowy, a zespół otrzymywał sygnały o problemach między wizytami.
+    \item Pokazano nie tylko lepszą jakość życia i mniej wizyt ratunkowych, ale także wydłużenie przeżycia całkowitego w porównaniu z grupą standardowej opieki.
+    \item To był ważny sygnał, że \texttt{ePRO} nie służy wyłącznie do „ładniejszego zbierania danych”, ale może realnie zmieniać przebieg opieki i bezpieczeństwo pacjenta.
+  \end{itemize}
+\end{frame}
+
 % SLIDE ID: sec04-differences
 \begin{frame}{ePRO, eCOA i klasyczny CRF}
   \SlideID{sec04-differences}
@@ -121,7 +193,8 @@
   \begin{itemize}
     \item dane są zbierane bliżej momentu wystąpienia objawu lub zdarzenia,
     \item maleje ryzyko odtwarzania informacji z pamięci podczas wizyty,
-    \item jednocześnie rośnie znaczenie użyteczności narzędzia i motywacji pacjenta.
+    \item znaczniki czasu utrudniają zbiorcze uzupełnianie wpisów po fakcie,
+    \item jednocześnie rośnie znaczenie użyteczności narzędzia, motywacji pacjenta i jakości projektu kwestionariusza.
   \end{itemize}
 \end{frame}
 
@@ -131,3 +204,16 @@
 }{
   System może zapisać wpis, oznaczyć go jako istotny klinicznie, przekazać dane do dalszego przeglądu i uruchomić proces oceny po stronie zespołu badania.
 }
+
+% SLIDE ID: sec04-sources
+\begin{frame}{Źródła do tej sekcji}
+  \SlideID{sec04-sources}
+  \footnotesize
+  \begin{itemize}
+    \item Applied Clinical Trials, \textit{ePRO and Ensuring Data Integrity}.
+    \item FDA, \textit{Patient-Reported Outcome Measures: Use in Medical Product Development to Support Labeling Claims}, December 2009.
+    \item Basch E. et al., \textit{Symptom Monitoring With Patient-Reported Outcomes During Routine Cancer Treatment: A Randomized Controlled Trial}, \texttt{JCO}, 2016.
+    \item Stone A.A. et al. i późniejsza literatura o elektronicznych dzienniczkach, recall bias i back-filling.
+    \item Nowsze rekomendacje dotyczące projektowania elektronicznych dzienniczków zdarzeń i \texttt{ePRO} w badaniach klinicznych.
+  \end{itemize}
+\end{frame}

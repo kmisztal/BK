@@ -13,7 +13,80 @@
   \begin{itemize}
     \item CTMS służy do planowania, śledzenia i nadzoru nad przebiegiem badania,
     \item koncentruje się na operacjach, a nie na pojedynczych danych klinicznych,
-    \item łączy informacje o ośrodkach, rekrutacji, monitoringu i statusach działań.
+    \item łączy informacje o ośrodkach, rekrutacji, monitoringu, finansach i statusach działań,
+    \item dla sponsora lub \texttt{CRO} staje się operacyjnym „single source of truth” dla portfolio badań.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-history-overview
+\begin{frame}{Historia rozwoju CTMS}
+  \SlideID{sec06-history-overview}
+  \begin{center}
+    \Large
+    Arkusze i papier $\rightarrow$ lokalne bazy danych $\rightarrow$ wyspecjalizowane systemy \texttt{CTMS} $\rightarrow$ chmura i ekosystem \texttt{eClinical}
+  \end{center}
+
+  \vspace{0.45cm}
+
+  \begin{itemize}
+    \item Historia \texttt{CTMS} jest historią porządkowania coraz bardziej złożonych operacji badania klinicznego.
+    \item Wraz ze wzrostem liczby ośrodków, krajów, dostawców i wymagań regulacyjnych przestały wystarczać ręczne listy, lokalne pliki i rozproszone raporty.
+    \item Współczesny \texttt{CTMS} nie jest już prostym trackerem zadań, ale szkieletem operacyjnym całego badania.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-history-pre-digital
+\begin{frame}{1. Era przedcyfrowa i wczesne bazy: lata 80. i 90.}
+  \SlideID{sec06-history-pre-digital}
+  \begin{itemize}
+    \item Zanim pojawiły się wyspecjalizowane systemy, zespoły badawcze pracowały na arkuszach kalkulacyjnych, papierowych listach i lokalnych zestawieniach.
+    \item Wraz ze wzrostem skali badań zaczęto budować proste bazy \texttt{Access} lub \texttt{SQL}, które dawały podstawowe przechowywanie danych operacyjnych.
+    \item Problemem było jednak rozproszenie informacji: osobno plan wizyt, osobno status ośrodka, osobno płatności, osobno dokumenty i milestone'y.
+    \item Taki model był silnie ręczny, podatny na duplikację wpisów i praktycznie nie dawał bieżącej widoczności sytuacji w wielu ośrodkach jednocześnie.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-history-purpose-built
+\begin{frame}{2. Powstanie wyspecjalizowanych CTMS: koniec lat 90. i lata 2000}
+  \SlideID{sec06-history-purpose-built}
+  \begin{itemize}
+    \item Wraz z harmonizacją wymagań \texttt{ICH-GCP} w 1996 r. rosła potrzeba lepszego śledzenia działań operacyjnych, nadzoru i audytowalności procesów badania.
+    \item Zaczęły pojawiać się komercyjne, purpose-built systemy \texttt{CTMS}, projektowane specjalnie do planowania badania, pracy z ośrodkami, monitoringu i budżetów.
+    \item Ich przewagą była standaryzacja: te same statusy, te same workflow i bardziej spójny obraz portfolio badań dla sponsora lub \texttt{CRO}.
+    \item To był moment przejścia z „pliku do zarządzania badaniem” do prawdziwego systemu operacyjnego dla badań klinicznych.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-history-cloud
+\begin{frame}{3. Przejście do chmury i integracji eClinical: lata 2010}
+  \SlideID{sec06-history-cloud}
+  \begin{itemize}
+    \item W latach 2010 coraz więcej systemów \texttt{CTMS} przeszło z modelu \texttt{on-premises} do \texttt{cloud / SaaS}, co ułatwiło współpracę sponsora, \texttt{CRO} i zdalnych zespołów.
+    \item Coraz wyraźniej dostrzegano problem silosów: osobny \texttt{EDC}, osobny \texttt{eTMF}, osobny system start-up, osobne raporty i ręczne reconciliacje.
+    \item Z tego powodu zaczęła rosnąć rola „connected ecosystem”, czyli integracji \texttt{CTMS} z \texttt{EDC}, \texttt{eTMF}, randomizacją, safety i finansami.
+    \item W praktyce oznaczało to mniej duplikacji danych, lepszą widoczność statusów i szybsze decyzje operacyjne.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-history-modern
+\begin{frame}{4. Współczesny CTMS: lata 2020 do dziś}
+  \SlideID{sec06-history-modern}
+  \begin{itemize}
+    \item Dzisiejszy \texttt{CTMS} działa jak cyfrowe rusztowanie badania: pokazuje start-up, status ośrodków, rekrutację, wizyty monitorujące, płatności i operacyjne \texttt{KPI}.
+    \item Duże znaczenie mają dashboardy czasu rzeczywistego, automatyczne alerty, audit trail i gotowość do inspekcji lub audytu.
+    \item W nowoczesnych platformach rośnie znaczenie centralnego oversightu sponsora, pracy z modelami zdalnymi i wspierania \texttt{risk-based monitoring}.
+    \item Kierunek rozwoju nie polega już tylko na „więcej funkcji”, ale na lepszym łączeniu operacji, zgodności i informacji zarządczej.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec06-history-what-changed
+\begin{frame}{Co zmienił CTMS w praktyce}
+  \SlideID{sec06-history-what-changed}
+  \begin{itemize}
+    \item Zmienił widoczność: sponsor i \texttt{CRO} nie muszą już czekać na ręczne raporty z wielu źródeł.
+    \item Zmienił odpowiedzialność: łatwiej wskazać właściciela zadania, otwartą akcję, opóźniony milestone lub ryzyko w ośrodku.
+    \item Zmienił tempo decyzji: dashboard i aktualny status pozwalają reagować wcześniej niż w modelu opartym na mailach i arkuszach.
+    \item Zmienił też relację z innymi systemami: \texttt{CTMS} staje się systemem zarządzania operacyjnego, a nie magazynem danych klinicznych.
   \end{itemize}
 \end{frame}
 
@@ -102,7 +175,8 @@
   \begin{itemize}
     \item sponsor lub CRO widzi badanie z poziomu operacyjnego,
     \item może śledzić wykonanie działań bez wchodzenia w każdy szczegół kliniczny,
-    \item CTMS wspiera kontrolę terminów, jakości pracy i eskalacji problemów.
+    \item CTMS wspiera kontrolę terminów, jakości pracy i eskalacji problemów,
+    \item nawet przy outsourcingu odpowiedzialność za oversight nie znika, dlatego centralny widok operacyjny ma znaczenie regulacyjne i zarządcze.
   \end{itemize}
 \end{frame}
 
@@ -111,7 +185,33 @@
   widok ośrodka, status rekrutacji, plan i wykonanie wizyty monitorującej, otwarte akcje oraz najważniejsze wskaźniki operacyjne.
 }
 
+% SLIDE ID: sec06-screens
+\begin{frame}{Jakie widoki CTMS warto pokazać}
+  \SlideID{sec06-screens}
+  \begin{itemize}
+    \item dashboard badania z kamieniami milowymi, statusem krajów i ośrodków,
+    \item karta ośrodka z datami aktywacji, rekrutacją i planem wizyt,
+    \item kalendarz lub lista wizyt monitorujących wraz z \texttt{follow-up actions},
+    \item ekran \texttt{issue tracking} z właścicielem, terminem i statusem eskalacji,
+    \item widok płatności lub budżetu, jeśli system to wspiera,
+    \item raport \texttt{KPI} pokazujący opóźnienia, produktywność ośrodków i ryzyka operacyjne.
+  \end{itemize}
+\end{frame}
+
 % SLIDE ID: sec06-discussion
 \DiscussionFrame{Które informacje powinny trafiać do CTMS, a które nie?}{
   Gdzie kończy się obszar operacyjny \texttt{CTMS}, a zaczyna obszar danych klinicznych w \texttt{EDC}? Jakie ryzyko pojawia się wtedy, gdy zespół miesza te role albo próbuje używać jednego systemu do wszystkiego?
 }
+
+% SLIDE ID: sec06-sources
+\begin{frame}{Źródła do tej sekcji}
+  \SlideID{sec06-sources}
+  \footnotesize
+  \begin{itemize}
+    \item Clinion, \textit{What is a CTMS? A Complete Guide for Researchers}, 29 grudnia 2025.
+    \item PHARMASEAL, \textit{What is a CTMS - Clinical Trial Management System?}
+    \item ICH, \textit{Guideline for Good Clinical Practice E6(R1)}, Step 4 dated 10 June 1996.
+    \item FDA, \textit{E6(R3) Good Clinical Practice (GCP)}, final guidance, September 2025.
+    \item EMA, \textit{ICH E6 Good clinical practice - Scientific guideline}, timeline dla \texttt{E6(R3)}.
+  \end{itemize}
+\end{frame}

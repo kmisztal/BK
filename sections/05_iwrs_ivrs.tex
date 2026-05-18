@@ -27,6 +27,78 @@
   \end{itemize}
 \end{frame}
 
+% SLIDE ID: sec05-history-overview
+\begin{frame}{Historia rozwoju IVRS / IWRS / RTSM}
+  \SlideID{sec05-history-overview}
+  \begin{center}
+    \Large
+    Ręczne zarządzanie $\rightarrow$ telefoniczne \texttt{IVRS} $\rightarrow$ webowe \texttt{IWRS} $\rightarrow$ współczesne \texttt{RTSM / IRT}
+  \end{center}
+
+  \vspace{0.45cm}
+
+  \begin{itemize}
+    \item Historia tych systemów pokazuje, że randomizacja i logistyka leku nie mogły pozostać procesami ręcznymi przy rosnącej złożoności badań.
+    \item Z czasem ciężar systemu przesunął się z samego przypisania leczenia na szersze zarządzanie zapasem, resupply i kontrolę nad całym przepływem leku badanego.
+    \item Dlatego współczesne \texttt{IWRS} coraz częściej są opisywane szerzej jako \texttt{RTSM} albo \texttt{IRT}.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-history-pre-digital
+\begin{frame}{1. Era przedcyfrowa: przed latami 90.}
+  \SlideID{sec05-history-pre-digital}
+  \begin{itemize}
+    \item Przed automatyzacją personel ośrodka i zespoły operacyjne zarządzały randomizacją oraz lekiem badanym ręcznie.
+    \item Zestawy leku były wysyłane do ośrodków z góry, często w pełnych blokach odpowiadających planowanemu leczeniu pacjentów.
+    \item Jeśli ośrodek rekrutował słabo albo pacjenci odpadali z badania, rosło marnotrawstwo zapasu i ryzyko nieefektywnej dystrybucji.
+    \item Ten model był mało elastyczny, słabo skalowalny i utrudniał utrzymanie bieżącej kontroli nad dostępnością leku.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-history-ivrs
+\begin{frame}{2. Wzrost znaczenia IVRS: lata 90.}
+  \SlideID{sec05-history-ivrs}
+  \begin{itemize}
+    \item W latach 90. pojawiły się pierwsze systemy \texttt{IVRS}, oparte na połączeniach telefonicznych i wyborach z klawiatury numerycznej.
+    \item Użytkownik dzwonił na numer systemu, wprowadzał dane pacjenta i otrzymywał przydział leczenia lub numer zestawu w czasie rzeczywistym.
+    \item Najważniejszą korzyścią była automatyzacja randomizacji bez ujawniania przydziału leczenia osobom, które nie powinny go znać.
+    \item Z czasem \texttt{IVRS} zaczęło wspierać nie tylko randomizację, ale także dispensing i podstawowy resupply na poziomie ośrodka.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-history-iwrs
+\begin{frame}{3. Rewolucja webowa: od IWRS do RTSM}
+  \SlideID{sec05-history-iwrs}
+  \begin{itemize}
+    \item Wraz z upowszechnieniem internetu pojawiły się webowe interfejsy \texttt{IWRS}, które początkowo bywały dodatkiem lub backupem dla rozwiązań telefonicznych.
+    \item Z czasem to właśnie interfejs webowy stał się dominującym standardem pracy operacyjnej w badaniach klinicznych.
+    \item Kluczowa zmiana dotyczyła logistyki: system przestał tylko losować pacjenta i zaczął aktywnie sterować zapasem, resupply i ruchem leku między depot a ośrodkiem.
+    \item Dlatego coraz częściej mówi się o \texttt{RTSM} (\texttt{Randomization and Trial Supply Management}) albo szerzej o \texttt{IRT} jako parasolowym terminie dla tych technologii.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-history-modern
+\begin{frame}{4. Współczesne systemy IWRS / RTSM / IRT}
+  \SlideID{sec05-history-modern}
+  \begin{itemize}
+    \item Dzisiejsze systemy wspierają nie tylko randomizację i przydział leku, ale również forecasting, zarządzanie zapasem, expiry management i ścieżki wyjątków.
+    \item Integrują się z \texttt{EDC}, depotami, systemami dostaw i innymi elementami ekosystemu \texttt{eClinical}.
+    \item W bardziej złożonych badaniach mogą obsługiwać adaptacyjne schematy randomizacji, kontrolę temperatury, wymiany zestawów i złożoną logistykę biologiczną.
+    \item W praktyce są dziś technologicznymi hubami łączącymi decyzję randomizacyjną z realnym przepływem leku badanego.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-history-what-changed
+\begin{frame}{Dlaczego ta ewolucja ma znaczenie}
+  \SlideID{sec05-history-what-changed}
+  \begin{itemize}
+    \item Zmieniła precyzję i bezstronność randomizacji, bo logika systemu zastąpiła proces ręczny.
+    \item Zmieniła ekonomię badania, bo lek nie musi być wysyłany „na zapas” w takim stopniu jak dawniej.
+    \item Zmieniła bezpieczeństwo operacyjne, bo łatwiej śledzić wydanie, zwrot, zniszczenie i odchylenia od planu.
+    \item Zmieniła też zakres odpowiedzialności: nowoczesny \texttt{IWRS} to nie tylko narzędzie do przydziału ramienia, ale centrum sterowania supply chain badania.
+  \end{itemize}
+\end{frame}
+
 % SLIDE ID: sec05-randomization
 \begin{frame}{Randomizacja, stratyfikacja, zaślepienie}
   \SlideID{sec05-randomization}
@@ -129,9 +201,34 @@
   kwalifikacja pacjenta, uruchomienie randomizacji, przypisanie ramienia badania, nadanie numeru zestawu oraz zapis całej operacji w systemie.
 }
 
+% SLIDE ID: sec05-screens
+\begin{frame}{Jakie widoki IWRS / RTSM warto pokazać}
+  \SlideID{sec05-screens}
+  \begin{itemize}
+    \item ekran kwalifikacji i uruchomienia randomizacji,
+    \item ekran przypisania ramienia badania i numeru zestawu,
+    \item widok zapasu leku w ośrodku i statusu resupply,
+    \item raport wydania, zwrotu i reconciliation leku,
+    \item ekran \texttt{emergency unblinding} lub jego kontrolowanej ścieżki,
+    \item dashboard pokazujący połączenie randomizacji z logistyką dostaw.
+  \end{itemize}
+\end{frame}
+
 % SLIDE ID: sec05-case
 \CaseStudyFrame{Co się stanie, jeśli użytkownik omyłkowo odeśle lek albo ujawni randomizację?}{
   Użytkownik wykonuje niewłaściwą operację logistyczną albo poznaje przypisanie pacjenta do ramienia badania poza kontrolowaną procedurą.
 }{
   Może dojść do zaburzenia zapasu, błędnego wydania leku, naruszenia zaślepienia i konieczności formalnego wyjaśnienia incydentu w dokumentacji badania.
 }
+
+% SLIDE ID: sec05-sources
+\begin{frame}{Źródła do tej sekcji}
+  \SlideID{sec05-sources}
+  \footnotesize
+  \begin{itemize}
+    \item 4G Clinical, \textit{IRT. IVRS. IXRS. IWRS. RTSM. What? Why do we do this to ourselves?}, 5 września 2017.
+    \item Clinical Leader / Synteract, \textit{IVRS/IWRS Services}.
+    \item Clinical Leader / Aptuit, \textit{Fully Web-Integrated Interactive Voice Response System (IVRS/IWRS)}, 2011.
+    \item Clinical Leader / Cenduit, \textit{Drug Supply Management and Allocation}.
+  \end{itemize}
+\end{frame}
