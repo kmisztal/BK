@@ -178,6 +178,84 @@
   \end{itemize}
 \end{frame}
 
+% SLIDE ID: sec02-history-overview
+\begin{frame}{Historia rozwoju CRF i eCRF}
+  \SlideID{sec02-history-overview}
+  \begin{center}
+    \Large
+    Era papierowa $\rightarrow$ wczesne systemy elektroniczne $\rightarrow$ rewolucja webowa $\rightarrow$ współczesne platformy zintegrowane
+  \end{center}
+
+  \vspace{0.45cm}
+
+  \begin{itemize}
+    \item Ten podział jest zgodny z logiką opisaną w materiale \texttt{IntuitionLabs} i dobrze porządkuje rozwój narzędzi do zbierania danych klinicznych.
+    \item Każdy etap zmieniał nie tylko technologię, ale też tempo pracy, koszty, jakość danych i sposób nadzoru nad badaniem.
+    \item Warto patrzeć na historię \texttt{eCRF} nie jako na zmianę „papier na ekran”, ale jako na zmianę całego modelu obiegu danych.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-history-paper-era
+\begin{frame}{1. Era papierowa: przed latami 90.}
+  \SlideID{sec02-history-paper-era}
+  \begin{itemize}
+    \item Przed erą cyfrową dane z badania były zapisywane w papierowych \texttt{CRF} w trakcie lub po wizycie pacjenta.
+    \item Formularze trafiały fizycznie do sponsora lub \texttt{CRO}, a następnie były ręcznie wprowadzane do bazy przez \texttt{data entry clerks}.
+    \item Każde dodatkowe przepisanie zwiększało ryzyko błędu transkrypcji, utraty strony, nieczytelności lub rozbieżności między kopiami.
+    \item Query oznaczało realny obieg papieru albo długi łańcuch korespondencji, więc wyjaśnienie problemu mogło trwać tygodnie.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \begin{WarningBox}
+    Największym ograniczeniem papieru nie był tylko brak wygody, ale brak szybkiej informacji zwrotnej o jakości danych.
+  \end{WarningBox}
+\end{frame}
+
+% SLIDE ID: sec02-history-early-electronic
+\begin{frame}{2. Wczesne systemy elektroniczne: lata 90.}
+  \SlideID{sec02-history-early-electronic}
+  \begin{itemize}
+    \item W latach 90. pojawiły się pierwsze systemy \texttt{EDC}, które miały ominąć wąskie gardło papieru i ręcznego przepisywania danych.
+    \item Wczesne rozwiązania były zwykle budowane indywidualnie, bywały ciężkie we wdrożeniu i często wymagały lokalnej infrastruktury oraz specjalistycznego wsparcia.
+    \item Kluczowym punktem regulacyjnym było \textbf{21 CFR Part 11}, opublikowane przez \texttt{FDA} 20 marca 1997 r., które stworzyło podstawę prawną dla elektronicznych zapisów i podpisów.
+    \item To właśnie wtedy zaczęło się myślenie o tym, że dane elektroniczne mogą być uznane za wiarygodne i równoważne dokumentacji papierowej, jeśli system jest odpowiednio kontrolowany.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-history-web-revolution
+\begin{frame}{3. Rewolucja webowa: lata 2000.}
+  \SlideID{sec02-history-web-revolution}
+  \begin{itemize}
+    \item W latach 2000. \texttt{EDC} przeszło z rozwiązań bardziej lokalnych do komercyjnych platform dostępnych przez przeglądarkę internetową.
+    \item Firmy takie jak \texttt{Medidata} wskazują rok \textbf{1999} jako moment uruchomienia \texttt{Rave EDC}, co dobrze symbolizuje początek komercjalizacji tego rynku.
+    \item Web-based \texttt{eCRF} pozwoliło ośrodkom pracować w czasie zbliżonym do rzeczywistego, a wbudowane \texttt{edit checks} zaczęły wychwytywać braki i błędy już przy wpisie.
+    \item W praktyce oznaczało to mniej opóźnionego \texttt{data cleaning}, szybsze query management i lepszą widoczność postępu badania dla sponsora oraz monitora.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-history-modern-era
+\begin{frame}{4. Współczesna era: od lat 2010 do dziś}
+  \SlideID{sec02-history-modern-era}
+  \begin{itemize}
+    \item Od lat 2010 \texttt{eCRF} stał się standardem, ale przestał być tylko „elektronicznym formularzem” i stał się elementem większych platform \texttt{eClinical}.
+    \item Nowoczesne systemy integrują się z \texttt{ePRO}, \texttt{eSource}, urządzeniami mobilnymi, a czasem także z \texttt{EHR}, żeby ograniczać redundantne wpisy.
+    \item W wytycznej \texttt{EMA} z 2023 r. wprost pojawiają się oczekiwania dotyczące walidacji, bezpieczeństwa, audit trail, zarządzania użytkownikami, \texttt{AI} i całego cyklu życia danych elektronicznych.
+    \item Kierunek rozwoju jest już nie tylko cyfrowy, ale zintegrowany: dane mają być kompletne, atrybutowalne, dostępne do przeglądu i gotowe do pracy w wielu systemach równolegle.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-history-what-changed
+\begin{frame}{Co naprawdę zmieniła ta ewolucja}
+  \SlideID{sec02-history-what-changed}
+  \begin{itemize}
+    \item Zmienił się moment kontroli jakości: z etapu „po fakcie” na etap wpisu i bieżącego review.
+    \item Zmienił się model odpowiedzialności: dziś większe znaczenie mają role użytkowników, uprawnienia, audit trail i walidacja systemu.
+    \item Zmienił się zasięg systemu: dawniej formularz był narzędziem zbierania danych, dziś jest częścią całego łańcucha operacyjnego badania.
+    \item Zmieniło się też otoczenie regulacyjne: nacisk przeszedł z nośnika danych na integralność danych w całym ich cyfrowym cyklu życia.
+  \end{itemize}
+\end{frame}
+
 
 % SLIDE ID: sec02-study-structure
 \begin{frame}{Struktura badania w EDC}
@@ -231,17 +309,6 @@
   \begin{ExampleBox}
     Wiek 250 lat, brak daty wizyty albo wynik niemożliwy dla danego badania laboratoryjnego.
   \end{ExampleBox}
-\end{frame}
-
-% SLIDE ID: sec02-edc-history-milestones
-\begin{frame}{Kamienie milowe EDC}
-  \SlideID{sec02-edc-history-milestones}
-  \begin{itemize}
-    \item lata 90.: przejście od papieru do systemów komputerowych,
-    \item 1997: 21 CFR Part 11 wzmacnia wymagania dla zapisów elektronicznych,
-    \item koniec lat 90. / początek 2000.: rozwój dużych platform EDC,
-    \item lata 2010+: integracje, chmura, eSource, ePRO i risk-based monitoring.
-  \end{itemize}
 \end{frame}
 
 % SLIDE ID: sec02-early-edc-login
@@ -432,12 +499,15 @@
 % SLIDE ID: sec02-sources
 \begin{frame}{Źródła do tej sekcji}
   \SlideID{sec02-sources}
+  \footnotesize
   \begin{itemize}
     \item Bellary S. et al., \textit{Basics of case report form designing in clinical research}, 2014.
-    \item FDA, \textit{21 CFR Part 11 — Electronic Records; Electronic Signatures}.
-    \item FDA, \textit{Electronic Systems, Electronic Records, and Electronic Signatures in Clinical Investigations}, 2024.
-    \item ICH, \textit{E6 Good Clinical Practice}.
-    \item Medidata, \textit{History of Clinical Research: From Paper to Digital}.
+    \item IntuitionLabs, \textit{eCRF vs. CRF: A Guide to Clinical Trial Data Management}, revised 5 April 2026.
+    \item FDA / eCFR, \textit{21 CFR Part 11 — Electronic Records; Electronic Signatures}, final rule from 20 March 1997.
+    \item FDA, \textit{Electronic Systems, Electronic Records, and Electronic Signatures in Clinical Investigations: Questions and Answers}, final guidance, October 2024.
+    \item EMA, \textit{Guideline on computerised systems and electronic data in clinical trials}, final version adopted 7 March 2023.
+    \item EMA / ICH, \textit{E6 Good Clinical Practice} oraz materiały do \texttt{E6(R3)}.
+    \item Medidata, \textit{History Timeline} i informacje o uruchomieniu \texttt{Rave EDC} w 1999 r.
     \item INA-RESPOND, \textit{Design and Development of Case Report Forms}.
     \item eClinical / ePartner Consulting, \textit{Electronic and paper CRF design in clinical trials}.
     \item OpenClinica, \textit{Electronic Data Capture (EDC)}.
