@@ -3,6 +3,7 @@
 
 \RequirePackage{tikz}
 \RequirePackage{graphicx}
+\RequirePackage{multicol}
 
 \mode<presentation>
 
@@ -54,7 +55,7 @@
 \newcommand{\UAFMlogo}{assets/uafm-logo.png}
 \newcommand{\setUAFMlogo}[1]{\renewcommand{\UAFMlogo}{#1}}
 
-\newcommand{\UAFMFooterText}{Kolegium Kształcenia Podyplomowego UAFM}
+\newcommand{\UAFMFooterText}{Kolegium Kszta\l{}cenia Podyplomowego UAFM}
 \newcommand{\setUAFMFooterText}[1]{\renewcommand{\UAFMFooterText}{#1}}
 
 \newcommand{\UAFMTitleCourse}{}
@@ -110,16 +111,23 @@
 }
 
 \AtBeginSection{
-  \begin{frame}
-    \vfill
+  \begin{frame}[t]
     \begin{beamercolorbox}[wd=\paperwidth,leftskip=10mm,rightskip=10mm]{normal text}
       {\usebeamerfont{frametitle}\insertsection\par}
-      \vspace{0.2cm}
+      \vspace{0.12cm}
       {\color{UAFMAccent}\rule{0.55\paperwidth}{1.2pt}}
-      \vspace{0.35cm}
-
-      {\color{UAFMMuted}\large część praktyczno-akademicka\par}
+      \vspace{0.18cm}
+      {\color{UAFMMuted}\small spis treści i kontekst bieżącej części\par}
+      \vspace{0.16cm}
+      {\tiny
+      \setlength{\columnsep}{10mm}
+      \begin{multicols}{2}
+        \tableofcontents[
+          currentsection,
+          hideallsubsections,
+          sectionstyle=show/shaded
+        ]
+      \end{multicols}\par}
     \end{beamercolorbox}
-    \vfill
   \end{frame}
 }

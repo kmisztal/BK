@@ -96,6 +96,79 @@
   \end{itemize}
 \end{frame}
 
+% SLIDE ID: sec09-data-to-any-model
+\begin{frame}{Czy można wrzucić dane do każdego modelu?}
+  \SlideID{sec09-data-to-any-model}
+  \begin{itemize}
+    \item krótka odpowiedź brzmi: \textbf{nie},
+    \item dane badania klinicznego nie powinny trafiać do dowolnego publicznego modelu bez oceny prawnej, bezpieczeństwa i celu użycia,
+    \item trzeba wiedzieć, gdzie dane są przetwarzane, kto jest procesorem, czy dane są logowane i czy mogą służyć do dalszego trenowania,
+    \item bezpieczniejsze są rozwiązania kontraktowo kontrolowane: środowisko prywatne, \texttt{enterprise AI}, izolacja danych, pseudonimizacja i kontrola dostępu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-privacy-leakage
+\begin{frame}{Prywatność danych i ryzyko wycieku}
+  \SlideID{sec09-privacy-leakage}
+  \begin{itemize}
+    \item dane kliniczne mogą zawierać informacje o zdrowiu, a więc dane szczególnej kategorii,
+    \item ryzyko to nie tylko spektakularny wyciek, ale też nieuprawnione ujawnienie w promptach, logach, eksportach i integracjach,
+    \item nawet po usunięciu imienia i nazwiska mogą pozostać dane pozwalające na ponowną identyfikację pacjenta,
+    \item zespół powinien zakładać zasadę minimalizacji: przekazywać tylko to, co naprawdę potrzebne do danego zadania.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-safe-ai-data-rules
+\begin{frame}{Jak bezpiecznie używać AI na danych badania}
+  \SlideID{sec09-safe-ai-data-rules}
+  \begin{itemize}
+    \item najpierw klasyfikujemy dane: publiczne, wewnętrzne, poufne, dane osobowe, dane medyczne,
+    \item przed użyciem \texttt{AI} trzeba określić podstawę użycia, zakres danych, retencję, role użytkowników i ślad audytowy,
+    \item warto stosować pseudonimizację, maskowanie, ograniczenie pól wolnego tekstu i zatwierdzone integracje systemowe,
+    \item jeśli nie da się obronić procesu przed audytem lub inspekcją, to znaczy, że użycie modelu jest zbyt ryzykowne.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-case-query-suggestions
+\begin{frame}{Case study: sygnały w danych pacjenta}
+  \SlideID{sec09-case-query-suggestions}
+  Po wizycie \texttt{Baseline} system widzi kilka sygnałów:
+  \begin{itemize}
+    \item data screeningu jest wcześniejsza niż data zgody,
+    \item \texttt{ALT = 145 U/L}, czyli wynik poza zakresem,
+    \item formularz oznaczono jako complete, ale brak kreatyniny,
+    \item w safety wspomniano o hospitalizacji, ale brak \texttt{AE/SAE} w \texttt{EDC}.
+  \end{itemize}
+  \vspace{0.2cm}
+  Pytanie: które z tych sygnałów są czysto techniczne, a które wymagają oceny klinicznej?
+\end{frame}
+
+% SLIDE ID: sec09-case-query-proposals
+\begin{frame}{Case study: jakie query może zasugerować AI}
+  \SlideID{sec09-case-query-proposals}
+  \texttt{AI} może zaproponować:
+  \begin{itemize}
+    \item query o chronologię zgody i screeningu,
+    \item query o potwierdzenie wyniku laboratoryjnego,
+    \item query o brakujące dane,
+    \item query o zgodność między safety a \texttt{EDC}.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec09-case-query-governance
+\begin{frame}{Case study: granice automatyzacji}
+  \SlideID{sec09-case-query-governance}
+  \begin{QuestionBox}
+  \texttt{AI} może wskazać miejsca do sprawdzenia, ale nie powinna samodzielnie:
+  \begin{itemize}
+    \item uznać hospitalizacji za lub nie za \texttt{SAE},
+    \item ocenić znaczenia klinicznego wyniku,
+    \item zaakceptować wyjaśnienia ośrodka bez review,
+    \item zamknąć query tam, gdzie potrzebna jest decyzja medyczna albo interpretacja protokołu.
+  \end{itemize}
+  \end{QuestionBox}
+\end{frame}
+
 % SLIDE ID: sec09-risky
 \begin{frame}{Gdzie AI jest ryzykowne}
   \SlideID{sec09-risky}

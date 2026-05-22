@@ -73,7 +73,7 @@
     \item Wraz z upowszechnieniem internetu pojawiły się webowe interfejsy \texttt{IWRS}, które początkowo bywały dodatkiem lub backupem dla rozwiązań telefonicznych.
     \item Z czasem to właśnie interfejs webowy stał się dominującym standardem pracy operacyjnej w badaniach klinicznych.
     \item Kluczowa zmiana dotyczyła logistyki: system przestał tylko losować pacjenta i zaczął aktywnie sterować zapasem, resupply i ruchem leku między depot a ośrodkiem.
-    \item Dlatego coraz częściej mówi się o \texttt{RTSM} (\texttt{Randomization and Trial Supply Management}) albo szerzej o \texttt{IRT} jako parasolowym terminie dla tych technologii.
+    \item Dlatego coraz częściej mówi się o \texttt{RTSM} (\texttt{Randomization and Trial Supply Management}) albo szerzej o \texttt{IRT} (\texttt{Interactive Response Technology}) jako parasolowym terminie dla tych technologii.
   \end{itemize}
 \end{frame}
 
@@ -106,6 +106,147 @@
     \item randomizacja przypisuje pacjenta do ramienia badania według ustalonych reguł,
     \item stratyfikacja pomaga utrzymać równowagę między grupami,
     \item zaślepienie chroni badanie przed ujawnieniem przydziału leczenia.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-randomization-types-overview
+\begin{frame}{Najczęstsze rodzaje randomizacji}
+  \SlideID{sec05-randomization-types-overview}
+  \begin{itemize}
+    \item randomizacja prosta,
+    \item randomizacja blokowa,
+    \item randomizacja stratyfikowana,
+    \item randomizacja adaptacyjna,
+    \item minimalizacja.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \begin{ExampleBox}
+    Wybór metody zależy od projektu badania, liczby ramion, wielkości próby i potrzeby utrzymania równowagi między grupami.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: sec05-simple-randomization
+\begin{frame}{Randomizacja prosta}
+  \SlideID{sec05-simple-randomization}
+  \begin{itemize}
+    \item każdy pacjent ma niezależną szansę przypisania do ramienia badania,
+    \item klasyczny przykład: proporcja 1:1 dla placebo vs lek badany,
+    \item największą zaletą jest prostota implementacji i zrozumienia,
+    \item ryzyko polega na tym, że przy małej próbie grupy mogą okazać się nierówne liczebnie.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-block-randomization
+\begin{frame}{Randomizacja blokowa}
+  \SlideID{sec05-block-randomization}
+  \begin{itemize}
+    \item pacjenci są randomizowani w blokach, np. po 4 lub 6 osób,
+    \item w każdym bloku zachowana jest proporcja między ramionami,
+    \item przykłady bloków 1:1: \texttt{AABB}, \texttt{ABAB}, \texttt{BAAB},
+    \item zaleta: łatwiej utrzymać równowagę liczebności grup,
+    \item ryzyko: przy małych i stałych blokach może rosnąć przewidywalność.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-stratified-randomization
+\begin{frame}{Randomizacja stratyfikowana}
+  \SlideID{sec05-stratified-randomization}
+  \begin{itemize}
+    \item osobne listy randomizacyjne tworzy się dla ważnych cech pacjenta lub ośrodka,
+    \item przykłady warstw: ośrodek, płeć, grupa wiekowa, stadium choroby,
+    \item dodatkowo można uwzględnić wcześniejsze leczenie lub wynik biomarkera,
+    \item celem jest ograniczenie sytuacji, w której jedna grupa ma więcej pacjentów o lepszym lub gorszym rokowaniu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-stratification-example
+\begin{frame}{Przykład stratyfikacji}
+  \SlideID{sec05-stratification-example}
+  \small
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+    \textbf{\textcolor{UAFMDarkBlue}{Badanie onkologiczne 1:1}}\par\medskip
+    lek badany vs placebo
+  \end{beamercolorbox}
+
+  \vspace{0.25cm}
+
+  \begin{itemize}
+    \item straty: stadium choroby \texttt{II / III},
+    \item wcześniejsze leczenie: \texttt{tak / nie},
+    \item ośrodek: \texttt{A / B / C}.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \begin{ExampleBox}
+    \texttt{IWRS} najpierw ustala kombinację straty, np. \texttt{stadium III + leczenie tak + ośrodek B}, a dopiero potem losuje pacjenta z odpowiedniej listy randomizacyjnej.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: sec05-adaptive-randomization
+\begin{frame}{Randomizacja adaptacyjna}
+  \SlideID{sec05-adaptive-randomization}
+  \begin{itemize}
+    \item prawdopodobieństwo przypisania do ramienia może zmieniać się w trakcie badania,
+    \item zmiana może zależeć od liczby pacjentów, dostępnych danych lub założeń statystycznych,
+    \item taki model wymaga ścisłej kontroli, walidacji i zgodności z protokołem,
+    \item nie jest to zwykły „ręczny wybór lepszego ramienia” przez zespół badania.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-minimization
+\begin{frame}{Minimalizacja}
+  \SlideID{sec05-minimization}
+  \begin{itemize}
+    \item jest to metoda dynamicznego przypisywania pacjenta tak, aby zmniejszać nierównowagę ważnych cech,
+    \item przykładowe cechy: ośrodek, stadium choroby, płeć, biomarker,
+    \item często zawiera element losowy, aby nie była w pełni przewidywalna,
+    \item bywa szczególnie przydatna w mniejszych lub bardziej złożonych badaniach.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-iwrs-randomization-logic
+\begin{frame}{Co faktycznie robi IWRS podczas randomizacji}
+  \SlideID{sec05-iwrs-randomization-logic}
+  \begin{itemize}
+    \item sprawdza uprawnienia użytkownika,
+    \item sprawdza kwalifikację pacjenta,
+    \item odczytuje dane stratyfikacyjne,
+    \item wybiera odpowiednią listę lub algorytm,
+    \item przypisuje ramię badania,
+    \item przypisuje numer zestawu leku,
+    \item zapisuje pełny audit trail.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-randomization-errors
+\begin{frame}{Typowe błędy przy randomizacji}
+  \SlideID{sec05-randomization-errors}
+  \begin{itemize}
+    \item błędnie wprowadzona strata,
+    \item randomizacja pacjenta przed pełną kwalifikacją,
+    \item randomizacja duplikatu pacjenta,
+    \item użycie nieaktualnej listy randomizacyjnej,
+    \item błędna konfiguracja ramion lub proporcji,
+    \item brak zgodności między randomizacją a dostępnością leku.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-teaching-question-randomization
+\begin{frame}{Pytanie do studentów}
+  \SlideID{sec05-teaching-question-randomization}
+  \begin{QuestionBox}
+    Dlaczego w małym badaniu randomizacja prosta może być ryzykowna?
+  \end{QuestionBox}
+
+  \vspace{0.25cm}
+
+  \begin{itemize}
+    \item nierówna liczba pacjentów w ramionach,
+    \item nierówny rozkład czynników rokowania,
+    \item większe ryzyko problemów interpretacyjnych.
   \end{itemize}
 \end{frame}
 
@@ -202,7 +343,7 @@
 }
 
 % SLIDE ID: sec05-screens
-\begin{frame}{Jakie widoki IWRS / RTSM warto pokazać}
+\begin{frame}{Jakie widoki powinien zawierać IWRS / RTSM}
   \SlideID{sec05-screens}
   \begin{itemize}
     \item ekran kwalifikacji i uruchomienia randomizacji,
@@ -226,6 +367,11 @@
   \SlideID{sec05-sources}
   \footnotesize
   \begin{itemize}
+    \item ICH, \textit{E9 Statistical Principles for Clinical Trials}.
+    \item ICH, \textit{E6(R3) Good Clinical Practice}.
+    \item EMA, \textit{Guideline on adjustment for baseline covariates in clinical trials}.
+    \item FDA, \textit{Adaptive Designs for Clinical Trials of Drugs and Biologics: Guidance for Industry}.
+    \item Pocock S.J., Simon R., \textit{Sequential treatment assignment with balancing for prognostic factors in the controlled clinical trial}, Biometrics, 1975.
     \item 4G Clinical, \textit{IRT. IVRS. IXRS. IWRS. RTSM. What? Why do we do this to ourselves?}, 5 września 2017.
     \item Clinical Leader / Synteract, \textit{IVRS/IWRS Services}.
     \item Clinical Leader / Aptuit, \textit{Fully Web-Integrated Interactive Voice Response System (IVRS/IWRS)}, 2011.

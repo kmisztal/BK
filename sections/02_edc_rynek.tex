@@ -188,18 +188,58 @@
   \end{columns}
 \end{frame}
 
-% SLIDE ID: sec02-market-screens
-\begin{frame}{Jakie screenshoty warto pokazać}
-  \SlideID{sec02-market-screens}
+% SLIDE ID: sec02-dicella-positioning
+\begin{frame}{diCELLa eCRF / EDC: jak pozycjonuje się produkt}
+  \SlideID{sec02-dicella-positioning}
   \begin{itemize}
-    \item \textbf{Medidata Rave}: lista pacjentów, casebook, ekran query, ekran audit trail lub review.
-    \item \textbf{Veeva Vault EDC}: dashboard badania, widok formularza wizyty, przykład workflow lub integracji z ekosystemem.
-    \item \textbf{Oracle}: historyczny login, strona główna, drzewo \texttt{CRF} i przegląd discrepancy.
-    \item \textbf{Castor / OpenClinica}: projekt formularza, konfiguracja walidacji, widok badania z perspektywy użytkownika.
-    \item \textbf{REDCap}: formularz projektu, record status dashboard, matrix formularzy lub prawa użytkowników.
-    \item \textbf{diCELLa}: ekran główny systemu, karta pacjenta, struktura wizyt i formularzy, a jeśli to możliwe także widok query lub raportów.
+    \item diCELLa \texttt{eCRF} to element szerszego ekosystemu \texttt{eClinical}, a nie tylko pojedynczy formularz do wpisywania danych.
+    \item Główne zalety: szybki start projektu, elastyczne dopasowanie do klienta i wsparcie zespołu wdrożeniowego.
+    \item Strona podkreśla również, że rozwiązanie jest domyślnie wzmacniane modułami \texttt{CTMS}, \texttt{eISF/eTMF} oraz \texttt{IWRS}.
+%    \item Z punktu widzenia wykładu to dobry przykład lokalnego dostawcy, który buduje ofertę jako kompletny pakiet operacyjno-danychowy.
   \end{itemize}
 \end{frame}
+
+% SLIDE ID: sec02-dicella-features
+\begin{frame}{diCELLa eCRF: funkcje, które warto odnotować}
+  \SlideID{sec02-dicella-features}
+  \begin{itemize}
+    \item Prosty interfejs, nacisk na użyteczność oraz możliwość uruchomienia demo systemu w czasie krótszym niż 5 dni.
+    \item \texttt{eCRF} to elementy ważne dla badań klinicznych: kontrola dostępu, backup, zgodność z \texttt{21 CFR Part 11} i \texttt{GCP}.
+    \item diCELLa oferuje też usługi wokół systemu: przygotowanie protokołu, rozwój \texttt{CRF}, data management, cleaning, szkolenia i analizę statystyczną.
+    \item Model działania, w którym system i usługa wdrożeniowa są oferowane razem, a nie jako dwa całkowicie odrębne produkty.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec02-dicella-demo
+%\begin{frame}{Co warto pokazać w demo diCELLa}
+%  \SlideID{sec02-dicella-demo}
+%  \begin{itemize}
+%    \item strukturę badania: pacjent, wizyta, formularz i pola danych,
+%    \item sposób wypełniania \texttt{eCRF} oraz ścieżkę akceptacji lub review,
+%    \item połączenie z panelem \texttt{CTMS}, jeśli jest dostępne w tym samym środowisku,
+%    \item elementy zgodności: role użytkowników, audit trail, kontrola dostępu,
+%    \item raporty lub widoki postępu, które pokazują, że platforma ma znaczenie nie tylko dla data entry, ale też dla nadzoru nad badaniem.
+%  \end{itemize}
+
+%  \vspace{0.25cm}
+%
+%  \begin{ExampleBox}
+%    Warto patrzeć nie tylko na sam formularz, ale też na to, jak system łączy wpis danych z nadzorem operacyjnym i dokumentacją.
+%  \end{ExampleBox}
+%\end{frame}
+
+% SLIDE ID: sec02-market-screens
+%\begin{frame}{Jakie screenshoty warto pokazać}
+%  \SlideID{sec02-market-screens}
+%  \begin{itemize}
+%    \item \textbf{Medidata Rave}: lista pacjentów, casebook, ekran query, ekran audit trail lub review.
+%    \item \textbf{Veeva Vault EDC}: dashboard badania, widok formularza wizyty, przykład workflow lub integracji z ekosystemem.
+%    \item \textbf{Oracle}: historyczny login, strona główna, drzewo \texttt{CRF} i przegląd discrepancy.
+%    \item \textbf{Castor / OpenClinica}: projekt formularza, konfiguracja walidacji, widok badania z perspektywy użytkownika.
+%    \item \textbf{REDCap}: formularz projektu, record status dashboard, matrix formularzy lub prawa użytkowników.
+%    \item \textbf{diCELLa}: ekran główny systemu, karta pacjenta, struktura wizyt i formularzy, a jeśli to możliwe także widok query lub raportów.
+%  \end{itemize}
+%\end{frame}
 
 % SLIDE ID: sec02-market-comparison-enterprise
 \begin{frame}{Porównanie: platformy enterprise}
@@ -229,7 +269,7 @@
     \hline
     REDCap & badania akademickie, rejestry, projekty lokalne & dostępność, prostota, popularność akademicka & nie zawsze odpowiada klasycznemu \texttt{EDC} rejestracyjnemu \\
     \hline
-    diCELLa eCRF & projekty lokalne i wdrożenia dopasowane do klienta & elastyczność, regionalne dopasowanie, szerszy kontekst \texttt{eClinical} & mniejsza rozpoznawalność globalna niż u największych dostawców \\
+    diCELLa eCRF & projekty lokalne i wdrożenia dopasowane do klienta & elastyczność, regionalne dopasowanie, szerszy kontekst \texttt{eClinical} & \\
   \end{tabular}
 \end{frame}
 
@@ -284,6 +324,6 @@
     \item Castor EDC: \texttt{https://www.castoredc.com/}
     \item OpenClinica: \texttt{https://www.openclinica.com/}
     \item REDCap: \texttt{https://projectredcap.org/} oraz portal Yale: \texttt{https://portal.redcap.yale.edu/}
-    \item diCELLa: \texttt{https://dicella.com/}
+    \item diCELLa: \texttt{https://dicella.com/} oraz sekcja produktów \texttt{eCRF / CTMS / eISF-eTMF / IWRS}
   \end{itemize}
 \end{frame}

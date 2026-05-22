@@ -48,6 +48,39 @@
   \end{itemize}
 \end{frame}
 
+% SLIDE ID: sec07-tmf-reference-model-what
+\begin{frame}{Trial Master File Reference Model}
+  \SlideID{sec07-tmf-reference-model-what}
+  \begin{itemize}
+    \item to branżowy model referencyjny porządkujący zawartość \texttt{TMF} i \texttt{eTMF},
+    \item projekt rozpoczął się w 2008 roku, a pierwsza wersja została opublikowana w 2010 roku,
+    \item jego celem jest ujednolicenie nazewnictwa, struktury i metadanych między sponsorami, CRO i ośrodkami,
+    \item model nie jest narzuconą jedyną strukturą, ale punktem odniesienia dla harmonizacji i inspection readiness.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec07-tmf-reference-model-version
+\begin{frame}{Aktualna wersja i znaczenie praktyczne}
+  \SlideID{sec07-tmf-reference-model-version}
+  \begin{itemize}
+    \item na stronie \texttt{CDISC} aktualnie wskazana jest wersja \texttt{3.3.1}, opublikowana 15 sierpnia 2023 roku,
+    \item wcześniejsze wersje rozwijały model od \texttt{v1.0} przez \texttt{v2.0}, \texttt{v3.0}, \texttt{v3.1}, \texttt{v3.2.0} i \texttt{v3.3},
+    \item aktualizacje odzwierciedlają zmiany regulacyjne, praktykę inspekcyjną i potrzeby pracy w systemach elektronicznych,
+    \item w praktyce \texttt{eTMF} często mapuje własną konfigurację właśnie do tego modelu.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec07-tmf-reference-model-structure
+\begin{frame}{Z czego składa się TMF Reference Model}
+  \SlideID{sec07-tmf-reference-model-structure}
+  \begin{itemize}
+    \item model ma strukturę: \textbf{Zone → Section → Artifact}, a w nowszych wersjach także \textbf{sub-artifacts},
+    \item oficjalnie obejmuje \textbf{11 stref}, m.in. Trial Management, Central Trial Documents, Regulatory, Site Management, Safety Reporting, Data Management i Statistics,
+    \item każdy artifact ma nazwę, definicję/purpose, poziom \texttt{core} lub \texttt{recommended}, odniesienia regulacyjne i identyfikator,
+    \item to ważne, bo \texttt{eTMF} nie zarządza tylko plikami, ale też logiką klasyfikacji i wyszukiwania dokumentów.
+  \end{itemize}
+\end{frame}
+
 % SLIDE ID: sec07-roles
 \begin{frame}{Role i odpowiedzialności}
   \SlideID{sec07-roles}
@@ -111,3 +144,14 @@
 \DiscussionFrame{Dlaczego eTMF nie jest tylko folderem z plikami?}{
   Które elementy sprawiają, że \texttt{eTMF} jest systemem jakości i gotowości inspekcyjnej, a nie zwykłym repozytorium? Co się psuje, jeśli dokument jest wgrany, ale bez metadanych, wersji albo właściciela?
 }
+
+% SLIDE ID: sec07-sources
+\begin{frame}{Źródła do bloku eTMF}
+  \SlideID{sec07-sources}
+  \begin{itemize}
+    \item \texttt{CDISC Trial Master File Reference Model}: opis standardu i lista wersji, w tym \texttt{v3.3.1} z 15.08.2023,
+    \item \texttt{TMF Reference Model Forum}: historia projektu, pierwsza publikacja w 2010 roku i rozwój od inicjatywy rozpoczętej w 2008 roku,
+    \item \texttt{TMF Reference Model User Guide}: struktura \texttt{Zone → Section → Artifact} oraz 11 stref modelu,
+    \item \texttt{ICH E6 GCP} i wytyczne \texttt{TMF}: kontekst regulacyjny dla essential documents i gotowości inspekcyjnej.
+  \end{itemize}
+\end{frame}
