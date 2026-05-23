@@ -250,6 +250,104 @@
   \end{itemize}
 \end{frame}
 
+% SLIDE ID: sec05-sample-size-basics
+\begin{frame}{Jak wyznacza się minimalną liczbę pacjentów}
+  \SlideID{sec05-sample-size-basics}
+  \begin{itemize}
+    \item liczebność badania wynika z planu statystycznego, a nie z samego systemu \texttt{IWRS},
+    \item punkt wyjścia to \textbf{primary endpoint}, oczekiwany efekt, poziom \texttt{alpha}, moc badania i zmienność danych lub częstość zdarzeń,
+    \item najczęściej planuje się \texttt{alpha = 0{,}05} i moc \texttt{80\%} albo \texttt{90\%},
+    \item na końcu dolicza się zapas na wycofania, brak danych i inne straty obserwacji.
+  \end{itemize}
+
+  \vspace{0.2cm}
+
+  \begin{ExampleBox}
+    \texttt{IWRS} nie liczy sam, ilu pacjentów trzeba zrandomizować. System wdraża wcześniej ustalony schemat: proporcje ramion, stratyfikację, bloki, minimalizację i listy randomizacyjne.
+  \end{ExampleBox}
+\end{frame}
+
+% SLIDE ID: sec05-sample-size-stratification
+\begin{frame}{Co zmienia stratyfikacja}
+  \SlideID{sec05-sample-size-stratification}
+  \begin{itemize}
+    \item stratyfikacja zwykle \textbf{nie oznacza}, że mnożymy próbę przez liczbę warstw,
+    \item oznacza jednak, że trzeba rozsądnie ograniczyć liczbę czynników stratyfikacyjnych,
+    \item jeśli warstw jest zbyt dużo, w części kombinacji będzie bardzo mało pacjentów i równowaga stanie się niestabilna,
+    \item dlatego w praktyce wybiera się tylko najważniejsze czynniki rokownicze, a przy bardziej złożonych układach rozważa się minimalizację.
+  \end{itemize}
+
+  \vspace{0.2cm}
+
+  \begin{WarningBox}
+    Z perspektywy \texttt{IWRS} zbyt rozbudowana stratyfikacja oznacza więcej list, więcej konfiguracji i większe ryzyko błędu operacyjnego.
+  \end{WarningBox}
+\end{frame}
+
+% SLIDE ID: sec05-sample-size-formula
+\begin{frame}{Skąd bierze się liczba pacjentów: prosty wzór}
+  \SlideID{sec05-sample-size-formula}
+  \small
+  Dla badania 1:1 z punktem końcowym binarnym można użyć klasycznego przybliżenia:
+
+  \[
+  n =
+  \frac{
+    \left(
+      z_{1-\alpha/2}\sqrt{2\bar{p}(1-\bar{p})}
+      +
+      z_{1-\beta}\sqrt{p_1(1-p_1)+p_2(1-p_2)}
+    \right)^2
+  }{
+    (p_2-p_1)^2
+  }
+  \]
+
+  \vspace{0.1cm}
+
+  \begin{itemize}
+    \item \(n\) to liczba pacjentów \textbf{na ramię},
+    \item \(p_1\) i \(p_2\) to oczekiwane odsetki odpowiedzi,
+    \item \(\bar{p}=(p_1+p_2)/2\),
+    \item \(z_{1-\alpha/2}\) odpowiada poziomowi istotności, a \(z_{1-\beta}\) mocy badania.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-sample-size-case
+\begin{frame}{Case study: proste liczenie liczebności badania}
+  \SlideID{sec05-sample-size-case}
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,rounded=true]{block body}
+    \textbf{\textcolor{UAFMDarkBlue}{Założenie badania}}\par\medskip
+    badanie 1:1, lek badany vs placebo, odpowiedź kliniczna po 12 tygodniach
+  \end{beamercolorbox}
+
+  \vspace{0.25cm}
+
+  \begin{itemize}
+    \item oczekiwana odpowiedź: \texttt{50\%} w kontroli vs \texttt{70\%} w leczeniu,
+    \item \texttt{alpha = 0{,}05}, moc \texttt{80\%}, alokacja \texttt{1:1},
+    \item podstawienie: \(p_1=0{,}50\), \(p_2=0{,}70\), \(\bar{p}=0{,}60\), \(z_{1-\alpha/2}=1{,}96\), \(z_{1-\beta}=0{,}84\),
+    \item wynik: około \textbf{93 pacjentów na ramię}, czyli \textbf{186 łącznie},
+    \item przy założeniu \texttt{10\%} utraty danych lub wycofań plan zwiększa się do około \textbf{104 na ramię}, czyli \textbf{208 łącznie}.
+  \end{itemize}
+\end{frame}
+
+% SLIDE ID: sec05-sample-size-case-stratification
+\begin{frame}{Case study: co zmienia stratyfikacja}
+  \SlideID{sec05-sample-size-case-stratification}
+  \begin{ExampleBox}
+    Stratyfikacja po \texttt{ośrodku (A/B/C)} i \texttt{wcześniejszym leczeniu (tak/nie)} daje \texttt{6} warstw. Przy \texttt{208} pacjentach to nadal wykonalne, ale przy dużo mniejszej próbie lepsza może być prostsza stratyfikacja albo minimalizacja.
+  \end{ExampleBox}
+
+  \vspace{0.25cm}
+
+  \begin{itemize}
+    \item sama liczebność nie rośnie automatycznie przez liczbę warstw,
+    \item rośnie jednak ryzyko, że część warstw będzie zbyt mała operacyjnie,
+    \item dlatego liczebność i plan randomizacji trzeba oceniać razem, a nie osobno.
+  \end{itemize}
+\end{frame}
+
 % SLIDE ID: sec05-drug-management
 \begin{frame}{Zarządzanie lekiem badanym}
   \SlideID{sec05-drug-management}
@@ -365,13 +463,15 @@
 % SLIDE ID: sec05-sources
 \begin{frame}{Źródła do tej sekcji}
   \SlideID{sec05-sources}
-  \footnotesize
+  \tiny
   \begin{itemize}
     \item ICH, \textit{E9 Statistical Principles for Clinical Trials}.
     \item ICH, \textit{E6(R3) Good Clinical Practice}.
     \item EMA, \textit{Guideline on adjustment for baseline covariates in clinical trials}.
+    \item NCBI Bookshelf / DELTA2, \textit{Conventional approach to a randomised controlled trial sample size calculation}.
     \item FDA, \textit{Adaptive Designs for Clinical Trials of Drugs and Biologics: Guidance for Industry}.
     \item Pocock S.J., Simon R., \textit{Sequential treatment assignment with balancing for prognostic factors in the controlled clinical trial}, Biometrics, 1975.
+    \item Tudur Smith C. i wsp., \textit{Choosing and evaluating randomisation methods in clinical trials: a qualitative study}, Trials, 2024.
     \item 4G Clinical, \textit{IRT. IVRS. IXRS. IWRS. RTSM. What? Why do we do this to ourselves?}, 5 września 2017.
     \item Clinical Leader / Synteract, \textit{IVRS/IWRS Services}.
     \item Clinical Leader / Aptuit, \textit{Fully Web-Integrated Interactive Voice Response System (IVRS/IWRS)}, 2011.
